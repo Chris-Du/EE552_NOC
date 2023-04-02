@@ -10,7 +10,7 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
     
-    parameter packet_width = 55;
+    parameter packet_width = 57;
     parameter addr_width = 4;
     parameter data_width = 40;
     parameter hop_width = 2;
@@ -18,7 +18,7 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
     parameter FL = 1;
     parameter BL = 1;
 
-    logic [packet_width-1:0] packet;
+    logic [packet_width-1:0] packet_data;
     logic [data_width-1:0] data;
     logic [hop_width-1:0] x_hop, y_hop;
     logic x_dir, y_dir;
@@ -30,18 +30,51 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
     logic [ADDR_F-1:0] addr_filter = 0;
     logic [ADDR_I-1:0] addr_ifmap = 0;
 
+    logic filter_ready = 0;
+    logic ifmap_ready = 0;
+
 
     always begin
-        packet_in.Receive(packet);
+        packet_in.Receive(packet_data);
 
-        iff_type = packet[54];
-        source = packet[53:50];
-        dest = packet[49:46];
-        x_dir = packet[45];
-        y_dir = packet[44];
-        x_hop = packet[43:42];
-        y_hop = packet[41:40];
-        data = packet[39:0];
+        
+        iff_type = packet_data[56];
+        source = packet_data[55:52];
+        dest = packet_data[51:48];
+        x_dir = packet_data[45];
+        y_dir = packet_data[44];
+        x_hop = packet_data[43:42];
+        y_hop = packet_data[41:40];
+        data = packet_data[39:0];
+        
+
+        /*
+        iff_type = (packet_data >> (packet_width-1)) & 1'b1;
+        source = (packet_data >> (packet_width-addr_width-1)) & 4'hF;
+        dest = (packet_data >> (packet_width-2*addr_width-1)) & 4'hF;
+        x_dir = (packet_data >> (packet_width-2*addr_width-4)) & 1'b1;
+        y_dir = (packet_data >> (packet_width-2*addr_width-5)) & 1'b1;
+        x_hop = (packet_data >> (data_width + hop_width)) & 4'hF;
+        y_hop = (packet_data >> data_width) & 4'hF;
+        data = packet_data & 40'hFFFFFFFFFF;
+        */
+        
+        /*
+        $display("pe_depacketizer\n
+            packet = %p\n
+            iff_type = %p\n
+            psum_in = %p\n
+            start = %p\n
+            sourceInft = %p\n
+            destInft = %p\n
+            x_dirInft = %p\n
+            y_dirInft = %p\n
+            x_hopInft = %p\n
+            y_hopInft = %p\n"
+                ,packet_data, iff_type, psum_in, start, 
+                sourceInft, destInft, x_dirInft, y_dirInft, x_hopInft, y_hopInft);
+        */
+
 
         //ifmap
         if(iff_type) begin
@@ -49,10 +82,11 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                 #FL;
                 ifmap_data = (data >> i*8) & 8'hFF;
                 ifmap_addr.Send(addr_ifmap);
-                ifmap_in.Send(data);
+                ifmap_in.Send(ifmap_data);
                 addr_ifmap++;
                 #BL;
             end
+            ifmap_ready = 1;
         end
         //filter
         else begin 
@@ -60,27 +94,37 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                 #FL;
                 filter_data = (data >> i*8) & 8'hFF;
                 filter_addr.Send(addr_filter);
-                filter_in.Send(data);
+                filter_in.Send(filter_data);
                 addr_filter++;
                 #BL;
             end
+            filter_ready = 1;
         end
 
-        //send the header data to packetizer
-        fork
-            sourceInft.Send(source);
-            destInft.Send(dest);
-            x_dirInft.Send(x_dir);
-            y_dirInft.Send(y_dir);
-            x_hopInft.Send(x_hop);
-            y_hopInft.Send(y_hop);
-            start.Send(0);
-            psum_in.Send(0);
-        join
+        $display("ifmap ready= %b, filter ready= %b", ifmap_ready, filter_ready);
 
-        #BL;
+        if(filter_ready && ifmap_ready) begin
+            
+            #FL;
+            //send the header data to packetizer
+            fork
+                start.Send(0);
+                sourceInft.Send(source);
+                destInft.Send(dest);
+                x_dirInft.Send(x_dir);
+                y_dirInft.Send(y_dir);
+                x_hopInft.Send(x_hop);
+                y_hopInft.Send(y_hop);
+                psum_in.Send(0);
+            join
 
-    end
+            filter_ready = 0;
+            ifmap_ready = 0;
+
+            #BL;
+
+        end
+    end 
 
 endmodule
 
@@ -94,17 +138,18 @@ module pe_packetizer(interface done, psum_out, sourceInft, destInft, x_dirInft, 
     parameter FL = 1;
     parameter BL = 1;
 
-    parameter packet_width = 55;
+    parameter packet_width = 57;
     parameter addr_width = 4;
     parameter data_width = 40;
     parameter hop_width = 2;
 
-    logic [packet_width-1:0] packet;
+    logic [packet_width-1:0] packet_data;
     logic [data_width-1:0] data;
     logic [hop_width-1:0] x_hop, y_hop;
     logic x_dir, y_dir;
     logic [addr_width-1:0] source, dest;
     logic packet_type;
+    logic [1:0] reserve = 2'b00;
 
     logic don_e;
 
@@ -122,12 +167,21 @@ module pe_packetizer(interface done, psum_out, sourceInft, destInft, x_dirInft, 
             y_hopInft.Receive(y_hop);
         join
 
+        $display("psum_out = %d\nsource = %b\ndest = %b\nx_dir = %b\ny_dir = %b\nx_hop = %b\ny_hop = %b\n",
+            data, source, dest, x_dir, y_dir, x_hop, y_hop);
+
         #FL;
 
-        packet = (source << (packet_width-addr_width-1)) | (dest << (packet_width-2*addr_width-1)) | (x_dir << (packet_width-2*addr_width-2)) 
-        | (y_dir << (packet_width-2*addr_width-3)) | (x_hop << (data_width + hop_width)) | (y_hop << data_width) | data;
+        packet_data = {source, dest, reserve, x_dir, y_dir, x_hop, y_hop, data};
 
-        packet_out.Send(packet);
+        /*
+        packet_data = source << (packet_width-1-addr_width) | dest << (packet_width-1-2*addr_width) 
+        | reserve << (data_width+2*hop_width+2) | x_dir << (data_width+2*hop_width+1) | y_dir << (data_width+2*hop_width) 
+        | (x_hop << (data_width+hop_width)) | (y_hop << data_width) | data;
+        */
+
+        packet_out.Send(packet_data);
+        $display("packet = %b\n", packet_data);
         #BL;
 
     end
@@ -434,7 +488,7 @@ module control(interface start, ifmap_out_addr, filter_out_addr, acc_clear, add_
 endmodule
 
 
-module pe(interface filter_in, filter_addr, ifmap_in, ifmap_addr, psum_in, start, done, psum_out);
+module pe(interface packet_in, packet_out);
     parameter WIDTH = 8;
     parameter DEPTH_I = 5;
     parameter ADDR_I = 3; 
@@ -443,16 +497,42 @@ module pe(interface filter_in, filter_addr, ifmap_in, ifmap_addr, psum_in, start
     parameter FL = 4;
     parameter BL = 2;
 
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) filter_out_addr ();
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) filter_out ();
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) ifmap_out_addr ();
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) ifmap_out ();
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) add_sel ();
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) split_sel ();
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) acc_clear ();
+    parameter packet_width = 57;
+    parameter addr_width = 4;
+    parameter data_width = 40;
+    parameter hop_width = 2;
+
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) filter_out_addr ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) filter_out ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) ifmap_out_addr ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) ifmap_out ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) add_sel ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) split_sel ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) acc_clear ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) ifmap_in ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) ifmap_addr ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) filter_in ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) filter_addr ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) psum_in ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) psum_out ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) start ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) done ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) sourceInft ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) destInft ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) x_dirInft ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) y_dirInft ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) x_hopInft ();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) y_hopInft ();
 
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) intf [3:0]();
+
+    pe_depacketizer #(.WIDTH(packet_width), .DEPTH_I(DEPTH_I), .ADDR_I(ADDR_I), .DEPTH_F(DEPTH_F), .ADDR_F(ADDR_F))
+    pedep (.packet_in(packet_in), .ifmap_in(ifmap_in), .ifmap_addr(ifmap_addr), .filter_in(filter_in), .filter_addr(filter_addr), 
+    .psum_in(psum_in), .start(start), .sourceInft(sourceInft), .destInft(destInft), .x_dirInft(x_dirInft), .y_dirInft(y_dirInft), .x_hopInft(x_hopInft), .y_hopInft(y_hopInft));
     
+    pe_packetizer #(.WIDTH(packet_width), .DEPTH_I(DEPTH_I), .ADDR_I(ADDR_I), .DEPTH_F(DEPTH_F), .ADDR_F(ADDR_F))
+    pep (.done(done), .psum_out(psum_out), .sourceInft(sourceInft), .destInft(destInft), .x_dirInft(x_dirInft), .y_dirInft(y_dirInft), .x_hopInft(x_hopInft), .y_hopInft(y_hopInft), .packet_out(packet_out));
+
     control #(.WIDTH(WIDTH), .DEPTH_I(DEPTH_I), .ADDR_I(ADDR_I), .DEPTH_F(DEPTH_F), .ADDR_F(ADDR_F))
     ctrl (.start(start), .ifmap_out_addr(ifmap_out_addr), .filter_out_addr(filter_out_addr), .acc_clear(acc_clear), .add_sel(add_sel), .split_sel(split_sel), .done(done));
 

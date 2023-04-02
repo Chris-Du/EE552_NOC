@@ -23,7 +23,7 @@ import SystemVerilogCSP::*;
 //-------------------------------------------------------------------------------------------------
 interface Channel;
   parameter SHARED = 0;
-  parameter WIDTH = 8;
+  parameter WIDTH = 57;
   parameter ChannelProtocol hsProtocol = P2PhaseBD;
   parameter NUMBER_OF_RECEIVERS = 1;
 `ifdef detectDeadlock
