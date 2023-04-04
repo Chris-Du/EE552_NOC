@@ -1,0 +1,1957 @@
+# Reading C:/questasim64_10.4c/tcl/vsim/pref.tcl
+# //  Questa Sim-64
+# //  Version 10.4c win64 Jul 20 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+project open C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/NOC
+# Loading project NOC
+# Compile of pe.sv was successful.
+# Compile of pe_tb.sv was successful.
+# Compile of shim.sv was successful.
+# Compile of submodules_tb.sv was successful.
+# Compile of SystemVerilogCSP.sv was successful.
+# Compile of dg_db.sv was successful with warnings.
+# 6 compiles, 0 failed with no errors.
+do complete_pe_wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# QuestaSim-64 vmap 10.4c Lib Mapping Utility 2015.07 Jul 20 2015
+# vmap work work 
+# Modifying C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/NOC.mpf
+# QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
+# Start time: 15:45:06 on Apr 04,2023
+# vlog -reportprogress 300 -work work submodules_tb.sv 
+# -- Compiling package submodules_tb_sv_unit
+# -- Importing package SystemVerilogCSP
+# -- Compiling module ifmap_mem_tb
+# -- Compiling module filter_mem_tb
+# -- Compiling module multiplier_tb
+# -- Compiling module complete_pe_tb
+# 
+# Top level modules:
+# 	ifmap_mem_tb
+# 	filter_mem_tb
+# 	multiplier_tb
+# 	complete_pe_tb
+# End time: 15:45:06 on Apr 04,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt work.complete_pe_tb 
+# Start time: 15:45:06 on Apr 04,2023
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.complete_pe_tb
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.submodules_tb_sv_unit
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.SystemVerilogCSP
+# Loading sv_std.std
+# Loading work.SystemVerilogCSP
+# Loading work.submodules_tb_sv_unit
+# Loading work.complete_pe_tb
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.pe
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.pe_sv_unit
+# Loading work.pe_sv_unit
+# Loading work.pe
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.Channel
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.SystemVerilogCSP_sv_unit
+# Loading work.SystemVerilogCSP_sv_unit
+# Loading work.Channel
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.pe_depacketizer
+# Loading work.pe_depacketizer
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.pe_packetizer
+# Loading work.pe_packetizer
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.control
+# Loading work.control
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.ifmap_mem
+# Loading work.ifmap_mem
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.filter_mem
+# Loading work.filter_mem
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.multiplier
+# Loading work.multiplier
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.adder
+# Loading work.adder
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.split
+# Loading work.split
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.accumulator
+# Loading work.accumulator
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.data_bucket
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.dg_db_sv_unit
+# Loading work.dg_db_sv_unit
+# Loading work.data_bucket
+# data_bucket starts complete_pe_tb.db                    0
+# Start recieving in module complete_pe_tb.db. Simulation time =                   0
+# ifmap_data =                  1
+# ifmap_addr =  0
+# 
+### complete_pe_tb.pe_i.ifmap_addr.Receive Stalled(                   1) @              1000000
+### complete_pe_tb.pe_i.ifmap_in.Receive Stalled(                   1) @              1000000
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @              7000000
+# ifmap_data =                  1
+# ifmap_addr =  1
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             13000000
+# ifmap_data =                  1
+# ifmap_addr =  2
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             19000000
+# ifmap_data =                  1
+# ifmap_addr =  3
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             25000000
+# ifmap_data =                  1
+# ifmap_addr =  4
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             31000000
+# ifmap_data =                  0
+# ifmap_addr =  5
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             37000000
+# ifmap_data =                  0
+# ifmap_addr =  6
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             43000000
+# ifmap_data =                  0
+# ifmap_addr =  7
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             49000000
+# ifmap_data =                  0
+# ifmap_addr =  8
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             55000000
+# ifmap_data =                  0
+# ifmap_addr =  9
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             61000000
+# ifmap_data =                  0
+# ifmap_addr = 10
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             67000000
+# ifmap_data =                  0
+# ifmap_addr = 11
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             73000000
+# ifmap_data =                  0
+# ifmap_addr = 12
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             79000000
+# ifmap_data =                  0
+# ifmap_addr = 13
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             85000000
+# ifmap_data =                  0
+# ifmap_addr = 14
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             91000000
+# ifmap_data =                  0
+# ifmap_addr = 15
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @             97000000
+# ifmap_data =                  0
+# ifmap_addr = 16
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @            103000000
+# ifmap_data =                  0
+# ifmap_addr = 17
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @            109000000
+# ifmap_data =                  0
+# ifmap_addr = 18
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @            115000000
+# ifmap_data =                  0
+# ifmap_addr = 19
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @            121000000
+# ifmap_data =                  0
+# ifmap_addr = 20
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @            127000000
+# ifmap_data =                  0
+# ifmap_addr = 21
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @            133000000
+# ifmap_data =                  0
+# ifmap_addr = 22
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @            139000000
+# ifmap_data =                  0
+# ifmap_addr = 23
+# 
+### complete_pe_tb.pe_i.ifmap_in.Send Stalled(                   5) @            145000000
+# ifmap_data =                  0
+# ifmap_addr = 24
+# 
+# ifmap ready= 1, filter ready= 0
+### complete_pe_tb.intf[0].Send Stalled(                 136) @            146000000
+### complete_pe_tb.pe_i.f_forwardIntf.Receive Stalled(                 147) @            147000000
+# Sending forwarding data
+# iff type = 0
+# data = 0000010100000100000000110000001000000001
+# source =  2
+# dest =  7
+# x_dir = 0
+# y_dir = 0
+# x_hop = 0
+# y_hop = 1
+# 
+# packet = 000010011100000010000010100000100000000110000001000000001
+# 
+# filter_data =                  1
+# filter_addr = 0
+# 
+### complete_pe_tb.pe_i.filter_addr.Receive Stalled(                 148) @            148000000
+### complete_pe_tb.pe_i.filter_in.Receive Stalled(                 148) @            148000000
+### complete_pe_tb.intf[1].Receive Stalled(                 148) @            148000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           148000000. Final result =  5489883099628033.
+# Execution cycle=          1, Cycle Time=        148, 
+# 
+#     Average CycleTime=148.000000, Average Throughput=0.006757
+# data_bucket starts complete_pe_tb.db                  148
+# Start recieving in module complete_pe_tb.db. Simulation time =           148000000
+### complete_pe_tb.pe_i.filter_in.Send Stalled(                   5) @            154000000
+# filter_data =                  2
+# filter_addr = 1
+# 
+### complete_pe_tb.pe_i.filter_in.Send Stalled(                   5) @            160000000
+# filter_data =                  3
+# filter_addr = 2
+# 
+### complete_pe_tb.pe_i.filter_in.Send Stalled(                   5) @            166000000
+# filter_data =                  4
+# filter_addr = 3
+# 
+### complete_pe_tb.pe_i.filter_in.Send Stalled(                   5) @            172000000
+# filter_data =                  5
+# filter_addr = 4
+# 
+# ifmap ready= 1, filter ready= 1
+### complete_pe_tb.pe_i.f_forwardIntf.Receive Stalled(                  24) @            173000000
+### complete_pe_tb.pe_i.start.Receive Stalled(                 174) @            174000000
+### complete_pe_tb.pe_i.sourceIntf.Receive Stalled(                   1) @            174000000
+### complete_pe_tb.pe_i.destIntf.Receive Stalled(                   1) @            174000000
+### complete_pe_tb.pe_i.x_dirIntf.Receive Stalled(                   1) @            174000000
+### complete_pe_tb.pe_i.y_dirIntf.Receive Stalled(                   1) @            174000000
+### complete_pe_tb.pe_i.x_hopIntf.Receive Stalled(                   1) @            174000000
+### complete_pe_tb.pe_i.y_hopIntf.Receive Stalled(                   1) @            174000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                 178) @            178000000
+### complete_pe_tb.pe_i.split_sel.Receive Stalled(                 184) @            184000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                 184) @            184000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                 184) @            184000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                 184) @            184000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            184000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            186000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                 188) @            188000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                 188) @            188000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            192000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            192000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            192000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            196000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            196000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                 196) @            196000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            198000000
+###Deadlock Detected on complete_pe_tb.pe_i.psum_in @                    0
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            200000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            200000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            202000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            204000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            206000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            208000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            212000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            212000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            212000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            212000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            214000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            216000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            216000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            216000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            218000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            220000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            224000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            224000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            224000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            226000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            228000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            228000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            228000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            230000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            232000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            232000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            234000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            236000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            240000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            240000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            240000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            240000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            242000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            244000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            244000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            244000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            246000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            248000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            252000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            254000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                 254) @            254000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            256000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            258000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            260000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            264000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            264000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  94) @            268000000
+# Sending psum
+# iff type = 0
+# psum_out =            15
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000001111
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                 121) @            269000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           269000000. Final result =  6417849371328527.
+# Execution cycle=          2, Cycle Time=        121, 
+# 
+#     Average CycleTime=134.500000, Average Throughput=0.007435
+# data_bucket starts complete_pe_tb.db                  269
+# Start recieving in module complete_pe_tb.db. Simulation time =           269000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            270000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            270000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            270000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            270000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            272000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            274000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            274000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            278000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            278000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            278000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            282000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            282000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            282000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            284000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            286000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            286000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            288000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            290000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            292000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            294000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            298000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            298000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            298000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            298000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            300000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            302000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            302000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            302000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            304000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            306000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            310000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            310000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            310000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            312000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            314000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            314000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            314000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            316000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            318000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            318000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            320000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            322000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            326000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            326000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            326000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            326000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            328000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            330000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            330000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            330000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            332000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            334000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            338000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            340000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @            340000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            342000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            344000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            346000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            350000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            350000000
+###Deadlock Detected on complete_pe_tb.pe_i.ifmap_in @            151000000
+###Deadlock Detected on complete_pe_tb.pe_i.ifmap_addr @            151000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            354000000
+# Sending psum
+# iff type = 0
+# psum_out =            10
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000001010
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @            355000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           355000000. Final result =  6417849371328522.
+# Execution cycle=          3, Cycle Time=         86, 
+# 
+#     Average CycleTime=118.333333, Average Throughput=0.008451
+# data_bucket starts complete_pe_tb.db                  355
+# Start recieving in module complete_pe_tb.db. Simulation time =           355000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            356000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            356000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            356000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            356000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            358000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            360000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            360000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            364000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            364000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            364000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            368000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            368000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            368000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            370000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            372000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            372000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            374000000
+###Deadlock Detected on complete_pe_tb.pe_i.if_forwardIntf @            175000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            376000000
+###Deadlock Detected on complete_pe_tb.pe_i.filter_in @            178000000
+###Deadlock Detected on complete_pe_tb.pe_i.filter_addr @            178000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            378000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            380000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            384000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            384000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            384000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            384000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            386000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            388000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            388000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            388000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            390000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            392000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            396000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            396000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            396000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            398000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            400000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            400000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            400000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            402000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            404000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            404000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            406000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            408000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            412000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            412000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            412000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            412000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            414000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            416000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            416000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            416000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            418000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            420000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            424000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            426000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @            426000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            428000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            430000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            432000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            436000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            436000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            440000000
+# Sending psum
+# iff type = 0
+# psum_out =             6
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000110
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @            441000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           441000000. Final result =  6417849371328518.
+# Execution cycle=          4, Cycle Time=         86, 
+# 
+#     Average CycleTime=110.250000, Average Throughput=0.009070
+# data_bucket starts complete_pe_tb.db                  441
+# Start recieving in module complete_pe_tb.db. Simulation time =           441000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            442000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            442000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            442000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            442000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            444000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            446000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            446000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            450000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            450000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            450000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            454000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            454000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            454000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            456000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            458000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            458000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            460000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            462000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            464000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            466000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            470000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            470000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            470000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            470000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            472000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            474000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            474000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            474000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            476000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            478000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            482000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            482000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            482000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            484000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            486000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            486000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            486000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            488000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            490000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            490000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            492000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            494000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            498000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            498000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            498000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            498000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            500000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            502000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            502000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            502000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            504000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            506000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            510000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            512000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @            512000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            514000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            516000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            518000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            522000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            522000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            526000000
+# Sending psum
+# iff type = 0
+# psum_out =             3
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000011
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @            527000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           527000000. Final result =  6417849371328515.
+# Execution cycle=          5, Cycle Time=         86, 
+# 
+#     Average CycleTime=105.400000, Average Throughput=0.009488
+# data_bucket starts complete_pe_tb.db                  527
+# Start recieving in module complete_pe_tb.db. Simulation time =           527000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            528000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            528000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            528000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            528000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            530000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            532000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            532000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            536000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            536000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            536000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            540000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            540000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            540000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            542000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            544000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            544000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            546000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            548000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            550000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            552000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            556000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            556000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            556000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            556000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            558000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            560000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            560000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            560000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            562000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            564000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            568000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            568000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            568000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            570000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            572000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            572000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            572000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            574000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            576000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            576000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            578000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            580000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            584000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            584000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            584000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            584000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            586000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            588000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            588000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            588000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            590000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            592000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            596000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            598000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @            598000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            600000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            602000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            604000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            608000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            608000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            612000000
+# Sending psum
+# iff type = 0
+# psum_out =             1
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000001
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @            613000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           613000000. Final result =  6417849371328513.
+# Execution cycle=          6, Cycle Time=         86, 
+# 
+#     Average CycleTime=102.166667, Average Throughput=0.009788
+# data_bucket starts complete_pe_tb.db                  613
+# Start recieving in module complete_pe_tb.db. Simulation time =           613000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            614000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            614000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            614000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            614000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            616000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            618000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            618000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            622000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            622000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            622000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            626000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            626000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            626000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            628000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            630000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            630000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            632000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            634000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            636000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            638000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            642000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            642000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            642000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            642000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            644000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            646000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            646000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            646000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            648000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            650000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            654000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            654000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            654000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            656000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            658000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            658000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            658000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            660000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            662000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            662000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            664000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            666000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            670000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            670000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            670000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            670000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            672000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            674000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            674000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            674000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            676000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            678000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            682000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            684000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @            684000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            686000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            688000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            690000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            694000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            694000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            698000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @            699000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           699000000. Final result =  6417849371328512.
+# Execution cycle=          7, Cycle Time=         86, 
+# 
+#     Average CycleTime=99.857143, Average Throughput=0.010014
+# data_bucket starts complete_pe_tb.db                  699
+# Start recieving in module complete_pe_tb.db. Simulation time =           699000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            700000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            700000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            700000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            700000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            702000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            704000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            704000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            708000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            708000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            708000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            712000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            712000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            712000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            714000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            716000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            716000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            718000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            720000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            722000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            724000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            728000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            728000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            728000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            728000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            730000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            732000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            732000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            732000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            734000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            736000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            740000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            740000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            740000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            742000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            744000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            744000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            744000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            746000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            748000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            748000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            750000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            752000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            756000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            756000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            756000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            756000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            758000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            760000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            760000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            760000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            762000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            764000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            768000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            770000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @            770000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            772000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            774000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            776000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            780000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            780000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            784000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @            785000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           785000000. Final result =  6417849371328512.
+# Execution cycle=          8, Cycle Time=         86, 
+# 
+#     Average CycleTime=98.125000, Average Throughput=0.010191
+# data_bucket starts complete_pe_tb.db                  785
+# Start recieving in module complete_pe_tb.db. Simulation time =           785000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            786000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            786000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            786000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            786000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            788000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            790000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            790000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            794000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            794000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            794000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            798000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            798000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            798000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            800000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            802000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            802000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            804000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            806000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            808000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            810000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            814000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            814000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            814000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            814000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            816000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            818000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            818000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            818000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            820000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            822000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            826000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            826000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            826000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            828000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            830000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            830000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            830000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            832000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            834000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            834000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            836000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            838000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            842000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            842000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            842000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            842000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            844000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            846000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            846000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            846000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            848000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            850000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            854000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            856000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @            856000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            858000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            860000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            862000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            866000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            866000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            870000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @            871000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           871000000. Final result =  6417849371328512.
+# Execution cycle=          9, Cycle Time=         86, 
+# 
+#     Average CycleTime=96.777778, Average Throughput=0.010333
+# data_bucket starts complete_pe_tb.db                  871
+# Start recieving in module complete_pe_tb.db. Simulation time =           871000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            872000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            872000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            872000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            872000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            874000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            876000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            876000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            880000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            880000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            880000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            884000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            884000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            884000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            886000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            888000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            888000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            890000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            892000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            894000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            896000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            900000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            900000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            900000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            900000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            902000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            904000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            904000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            904000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            906000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            908000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            912000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            912000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            912000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            914000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @            916000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @            916000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            916000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            918000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @            920000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            920000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @            922000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            924000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            928000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @            928000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @            928000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            928000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            930000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @            932000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @            932000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            932000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            934000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            936000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            940000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @            942000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @            942000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @            944000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @            946000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            948000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @            952000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            952000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            956000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @            957000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           957000000. Final result =  6417849371328512.
+# Execution cycle=         10, Cycle Time=         86, 
+# 
+#     Average CycleTime=95.700000, Average Throughput=0.010449
+# data_bucket starts complete_pe_tb.db                  957
+# Start recieving in module complete_pe_tb.db. Simulation time =           957000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @            958000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @            958000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @            958000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @            958000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @            960000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @            962000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @            962000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @            966000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @            966000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            966000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @            970000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @            970000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @            970000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @            972000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @            974000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @            974000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @            976000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @            978000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @            980000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @            982000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @            986000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @            986000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @            986000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @            986000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @            988000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @            990000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @            990000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @            990000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @            992000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @            994000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @            998000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @            998000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @            998000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1000000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1002000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1002000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1002000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1004000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1006000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1006000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1008000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1010000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1014000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1014000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1014000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1014000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1016000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1018000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1018000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1018000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1020000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1022000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1026000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1028000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1028000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1030000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1032000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1034000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1038000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1038000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1042000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1043000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1043000000. Final result =  6417849371328512.
+# Execution cycle=         11, Cycle Time=         86, 
+# 
+#     Average CycleTime=94.818182, Average Throughput=0.010547
+# data_bucket starts complete_pe_tb.db                 1043
+# Start recieving in module complete_pe_tb.db. Simulation time =          1043000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1044000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1044000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1044000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1044000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1046000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1048000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1048000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1052000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1052000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1052000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1056000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1056000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1056000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1058000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1060000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1060000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1062000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1064000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1066000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1068000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1072000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1072000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1072000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1072000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1074000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1076000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1076000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1076000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1078000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1080000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1084000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1084000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1084000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1086000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1088000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1088000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1088000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1090000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1092000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1092000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1094000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1096000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1100000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1100000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1100000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1100000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1102000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1104000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1104000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1104000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1106000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1108000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1112000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1114000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1114000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1116000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1118000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1120000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1124000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1124000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1128000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1129000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1129000000. Final result =  6417849371328512.
+# Execution cycle=         12, Cycle Time=         86, 
+# 
+#     Average CycleTime=94.083333, Average Throughput=0.010629
+# data_bucket starts complete_pe_tb.db                 1129
+# Start recieving in module complete_pe_tb.db. Simulation time =          1129000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1130000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1130000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1130000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1130000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1132000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1134000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1134000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1138000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1138000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1138000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1142000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1142000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1142000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1144000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1146000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1146000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1148000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1150000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1152000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1154000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1158000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1158000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1158000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1158000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1160000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1162000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1162000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1162000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1164000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1166000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1170000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1170000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1170000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1172000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1174000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1174000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1174000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1176000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1178000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1178000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1180000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1182000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1186000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1186000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1186000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1186000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1188000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1190000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1190000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1190000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1192000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1194000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1198000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1200000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1200000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1202000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1204000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1206000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1210000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1210000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1214000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1215000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1215000000. Final result =  6417849371328512.
+# Execution cycle=         13, Cycle Time=         86, 
+# 
+#     Average CycleTime=93.461538, Average Throughput=0.010700
+# data_bucket starts complete_pe_tb.db                 1215
+# Start recieving in module complete_pe_tb.db. Simulation time =          1215000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1216000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1216000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1216000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1216000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1218000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1220000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1220000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1224000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1224000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1224000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1228000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1228000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1228000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1230000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1232000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1232000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1234000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1236000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1238000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1240000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1244000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1244000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1244000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1244000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1246000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1248000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1248000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1248000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1250000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1252000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1256000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1256000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1256000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1258000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1260000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1260000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1260000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1262000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1264000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1264000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1266000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1268000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1272000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1272000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1272000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1272000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1274000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1276000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1276000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1276000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1278000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1280000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1284000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1286000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1286000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1288000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1290000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1292000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1296000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1296000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1300000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1301000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1301000000. Final result =  6417849371328512.
+# Execution cycle=         14, Cycle Time=         86, 
+# 
+#     Average CycleTime=92.928571, Average Throughput=0.010761
+# data_bucket starts complete_pe_tb.db                 1301
+# Start recieving in module complete_pe_tb.db. Simulation time =          1301000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1302000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1302000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1302000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1302000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1304000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1306000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1306000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1310000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1310000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1310000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1314000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1314000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1314000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1316000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1318000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1318000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1320000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1322000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1324000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1326000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1330000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1330000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1330000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1330000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1332000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1334000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1334000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1334000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1336000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1338000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1342000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1342000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1342000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1344000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1346000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1346000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1346000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1348000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1350000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1350000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1352000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1354000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1358000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1358000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1358000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1358000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1360000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1362000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1362000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1362000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1364000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1366000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1370000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1372000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1372000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1374000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1376000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1378000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1382000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1382000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1386000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1387000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1387000000. Final result =  6417849371328512.
+# Execution cycle=         15, Cycle Time=         86, 
+# 
+#     Average CycleTime=92.466667, Average Throughput=0.010815
+# data_bucket starts complete_pe_tb.db                 1387
+# Start recieving in module complete_pe_tb.db. Simulation time =          1387000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1388000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1388000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1388000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1388000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1390000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1392000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1392000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1396000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1396000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1396000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1400000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1400000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1400000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1402000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1404000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1404000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1406000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1408000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1410000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1412000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1416000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1416000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1416000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1416000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1418000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1420000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1420000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1420000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1422000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1424000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1428000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1428000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1428000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1430000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1432000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1432000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1432000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1434000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1436000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1436000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1438000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1440000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1444000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1444000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1444000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1444000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1446000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1448000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1448000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1448000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1450000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1452000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1456000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1458000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1458000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1460000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1462000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1464000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1468000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1468000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1472000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1473000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1473000000. Final result =  6417849371328512.
+# Execution cycle=         16, Cycle Time=         86, 
+# 
+#     Average CycleTime=92.062500, Average Throughput=0.010862
+# data_bucket starts complete_pe_tb.db                 1473
+# Start recieving in module complete_pe_tb.db. Simulation time =          1473000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1474000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1474000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1474000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1474000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1476000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1478000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1478000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1482000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1482000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1482000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1486000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1486000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1486000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1488000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1490000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1490000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1492000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1494000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1496000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1498000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1502000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1502000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1502000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1502000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1504000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1506000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1506000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1506000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1508000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1510000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1514000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1514000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1514000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1516000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1518000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1518000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1518000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1520000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1522000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1522000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1524000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1526000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1530000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1530000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1530000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1530000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1532000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1534000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1534000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1534000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1536000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1538000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1542000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1544000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1544000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1546000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1548000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1550000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1554000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1554000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1558000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1559000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1559000000. Final result =  6417849371328512.
+# Execution cycle=         17, Cycle Time=         86, 
+# 
+#     Average CycleTime=91.705882, Average Throughput=0.010904
+# data_bucket starts complete_pe_tb.db                 1559
+# Start recieving in module complete_pe_tb.db. Simulation time =          1559000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1560000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1560000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1560000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1560000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1562000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1564000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1564000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1568000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1568000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1568000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1572000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1572000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1572000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1574000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1576000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1576000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1578000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1580000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1582000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1584000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1588000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1588000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1588000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1588000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1590000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1592000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1592000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1592000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1594000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1596000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1600000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1600000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1600000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1602000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1604000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1604000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1604000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1606000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1608000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1608000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1610000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1612000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1616000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1616000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1616000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1616000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1618000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1620000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1620000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1620000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1622000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1624000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1628000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1630000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1630000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1632000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1634000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1636000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1640000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1640000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1644000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1645000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1645000000. Final result =  6417849371328512.
+# Execution cycle=         18, Cycle Time=         86, 
+# 
+#     Average CycleTime=91.388889, Average Throughput=0.010942
+# data_bucket starts complete_pe_tb.db                 1645
+# Start recieving in module complete_pe_tb.db. Simulation time =          1645000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1646000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1646000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1646000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1646000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1648000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1650000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1650000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1654000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1654000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1654000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1658000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1658000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1658000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1660000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1662000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1662000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1664000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1666000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1668000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1670000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1674000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1674000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1674000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1674000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1676000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1678000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1678000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1678000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1680000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1682000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1686000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1686000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1686000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1688000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1690000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1690000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1690000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1692000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1694000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1694000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1696000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1698000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1702000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1702000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1702000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1702000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1704000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1706000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1706000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1706000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1708000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1710000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1714000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1716000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1716000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1718000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1720000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1722000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1726000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1726000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1730000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1731000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1731000000. Final result =  6417849371328512.
+# Execution cycle=         19, Cycle Time=         86, 
+# 
+#     Average CycleTime=91.105263, Average Throughput=0.010976
+# data_bucket starts complete_pe_tb.db                 1731
+# Start recieving in module complete_pe_tb.db. Simulation time =          1731000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1732000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1732000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1732000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1732000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1734000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1736000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1736000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1740000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1740000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1740000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1744000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1744000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1744000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1746000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1748000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1748000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1750000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1752000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1754000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1756000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1760000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1760000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1760000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1760000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1762000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1764000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1764000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1764000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1766000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1768000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1772000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1772000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1772000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1774000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1776000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1776000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1776000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1778000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1780000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1780000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1782000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1784000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1788000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1788000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1788000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1788000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1790000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1792000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1792000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1792000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1794000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1796000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1800000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1802000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1802000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1804000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1806000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1808000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1812000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1812000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1816000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1817000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1817000000. Final result =  6417849371328512.
+# Execution cycle=         20, Cycle Time=         86, 
+# 
+#     Average CycleTime=90.850000, Average Throughput=0.011007
+# data_bucket starts complete_pe_tb.db                 1817
+# Start recieving in module complete_pe_tb.db. Simulation time =          1817000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1818000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1818000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1818000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1818000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1820000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1822000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1822000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1826000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1826000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1826000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1830000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1830000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1830000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1832000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1834000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1834000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1836000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1838000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1840000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1842000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1846000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1846000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1846000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1846000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1848000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1850000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1850000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1850000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1852000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1854000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1858000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1858000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1858000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1860000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1862000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1862000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1862000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1864000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1866000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1866000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1868000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1870000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1874000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1874000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1874000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1874000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1876000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1878000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1878000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1878000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1880000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1882000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1886000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1888000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1888000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1890000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1892000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1894000000
+### complete_pe_tb.pe_i.acc_clear.Receive Stalled(                   2) @           1898000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1898000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1902000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1903000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1903000000. Final result =  6417849371328512.
+# Execution cycle=         21, Cycle Time=         86, 
+# 
+#     Average CycleTime=90.619048, Average Throughput=0.011035
+# data_bucket starts complete_pe_tb.db                 1903
+# Start recieving in module complete_pe_tb.db. Simulation time =          1903000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   4) @           1904000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  24) @           1904000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  24) @           1904000000
+### complete_pe_tb.pe_i.intf[3].Send Stalled(                   2) @           1904000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   2) @           1906000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  24) @           1908000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  24) @           1908000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   2) @           1912000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   2) @           1912000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1912000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   2) @           1916000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   2) @           1916000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  12) @           1916000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   6) @           1918000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   2) @           1920000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  14) @           1920000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                  10) @           1922000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1924000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  14) @           1926000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1928000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1932000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  14) @           1932000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  14) @           1932000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1932000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1934000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  14) @           1936000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  14) @           1936000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1936000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1938000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1940000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                   6) @           1944000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                   6) @           1944000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1944000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1946000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                   6) @           1948000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                   6) @           1948000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1948000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1950000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   6) @           1952000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1952000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                  10) @           1954000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1956000000
+### complete_pe_tb.pe_i.add_sel.Receive Stalled(                   2) @           1960000000
+### complete_pe_tb.pe_i.filter_out_addr.Receive Stalled(                  10) @           1960000000
+### complete_pe_tb.pe_i.ifmap_out_addr.Receive Stalled(                  10) @           1960000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                   6) @           1960000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   2) @           1962000000
+### complete_pe_tb.pe_i.filter_out.Receive Stalled(                  10) @           1964000000
+### complete_pe_tb.pe_i.ifmap_out.Receive Stalled(                  10) @           1964000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   4) @           1964000000
+### complete_pe_tb.pe_i.acc_clear.Send Stalled(                   6) @           1966000000
+### complete_pe_tb.pe_i.intf[0].Receive Stalled(                   8) @           1968000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                  10) @           1972000000
+### complete_pe_tb.pe_i.add_sel.Send Stalled(                   2) @           1974000000
+### complete_pe_tb.pe_i.psum_in.Send Stalled(                  85) @           1974000000
+### complete_pe_tb.pe_i.intf[2].Receive Stalled(                  10) @           1976000000
+### complete_pe_tb.pe_i.split_sel.Send Stalled(                   6) @           1978000000
+### complete_pe_tb.pe_i.intf[3].Receive Stalled(                   6) @           1980000000
+### complete_pe_tb.pe_i.intf[1].Receive Stalled(                   6) @           1984000000
+### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1988000000
+# Sending psum
+# iff type = 0
+# psum_out =             0
+# source =  2
+# dest = 13
+# x_dir = 1
+# y_dir = 1
+# x_hop = 1
+# y_hop = 1
+# 
+# packet = 000010110110011010000000000000000000000000000000000000000
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1989000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1989000000. Final result =  6417849371328512.
+# Execution cycle=         22, Cycle Time=         86, 
+# 
+#     Average CycleTime=90.409091, Average Throughput=0.011061
+# data_bucket starts complete_pe_tb.db                 1989
+# Start recieving in module complete_pe_tb.db. Simulation time =          1989000000
+### complete_pe_tb.pe_i.done.Send Stalled(                   6) @           1990000000
+### complete_pe_tb.pe_i.if_forwardIntf.Receive Stalled(                1816) @           1991000000
+# Sending forwarding data
+# iff type = 1
+# data = 0000000000000000000000000000000000011111
+# source =  2
+# dest =  1
+# x_dir = 0
+# y_dir = 0
+# x_hop = 1
+# y_hop = 0
+# 
+# packet = 010010000100010000000000000000000000000000000000000011111
+# 
+### complete_pe_tb.intf[1].Receive Stalled(                   4) @           1993000000
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1993000000. Final result = 40681930227712031.
+# Execution cycle=         23, Cycle Time=          4, 
+# 
+#     Average CycleTime=86.652174, Average Throughput=0.011540
+# data_bucket starts complete_pe_tb.db                 1993
+# Start recieving in module complete_pe_tb.db. Simulation time =          1993000000
+# ** Note: $stop    : submodules_tb.sv(157)
+#    Time: 2146 ns  Iteration: 0  Instance: /complete_pe_tb
+# Break in Module complete_pe_tb at submodules_tb.sv line 157
+
+
