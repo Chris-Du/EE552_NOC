@@ -95,61 +95,6 @@ module multiplier_tb;
 
 endmodule
 
-/*
-module pe_packetizer_tb;
-    parameter packet_width = 55;
-
-    logic [packet_width-1:0] packet;
-
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) intf [12:0] ();
-
-    pe_depacketizer pedep(.packet_in(intf[0]), .ifmap_in(intf[1]), .ifmap_addr(intf[2]), .filter_in(intf[3]), .filter_addr(intf[4]), 
-    .psum_in(intf[5]), .start(intf[6]), .sourceInft(intf[7]), .destInft(intf[8]), .x_dirInft(intf[9]), .y_dirInft(intf[10]), 
-    .x_hopInft(intf[11]), .y_hopInft(intf[12]));
-
-    initial begin
-        #10;
-        inft[0].Send();
-        #10;
-        intf[1].Receive(packet);
-        #10;
-        inft[0].Send();
-        #10;
-        intf[1].Receive(packet);
-        #10;
-        $stop;
-    end
-
-endmodule
-*/
-
-/*
-module pe_depacketizer_tb;
-    parameter packet_width = 57;
-
-    logic [packet_width-1:0] packet;
-
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) intf [13:0] ();
-
-    pe_depacketizer pedep(.packet_in(intf[0]), .ifmap_in(intf[1]), .ifmap_addr(intf[2]), .filter_in(intf[3]), .filter_addr(intf[4]), 
-    .psum_in(intf[5]), .start(intf[6]), .sourceInft(intf[7]), .destInft(intf[8]), .x_dirInft(intf[9]), .y_dirInft(intf[10]), 
-    .x_hopInft(intf[11]), .y_hopInft(intf[12]));
-
-    initial begin
-        intf[0].Send('h00F3512345);
-        #10;
-        intf[13].Receive(packet);
-        #10;
-        intf[0].Send('h10F3534567);
-        #10;
-        intf[13].Receive(packet);
-        #10;
-        $stop;
-    end
-
-endmodule
-*/
-
 module complete_pe_tb;
     parameter WIDTH = 8;
     parameter DEPTH_I = 5;
@@ -171,11 +116,42 @@ module complete_pe_tb;
     data_bucket db (intf[1]);
 
     initial begin
-        #20;
-        intf[0].Send('h00F350102030405);
-        #20;
-        intf[0].Send('h10F350304050607);
-        #200;
+
+        /*
+        intf[0].Send('h1C100000000001F);
+        #10;
+        intf[0].Send('h0B1000504030201);        
+        #1000;
+        */
+
+        /*
+        intf[0].Send('h0B1000504030201);
+        #10;
+        intf[0].Send('h1C100000000001F);        
+        #1000;        
+        */
+
+        /*
+        intf[0].Send('h0B6000504030201);
+        #10;
+        intf[0].Send('h1C600000000001F);
+        #1000;
+        */
+        
+        /*
+        //PE2
+        intf[0].Send('h1C200000000001F);
+        #10;
+        intf[0].Send('h0B2000504030201);
+        #2000;
+        */
+
+        //PE7
+        intf[0].Send('h1C700000000001F);
+        #10;
+        intf[0].Send('h0B7000504030201);
+        #2000;
+
         $stop;
     end
 endmodule
