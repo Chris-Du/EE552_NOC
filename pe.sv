@@ -370,11 +370,15 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
     parameter packet_width = 57;
     parameter addr_width = 4;
     parameter data_width = 40;
+    parameter psum_width = 13;
     parameter x_hop_width = 3;
     parameter y_hop_width = 2;
+    parameter psum_addr_width = 27;
 
     logic [packet_width-1:0] packet_data = 0;
     logic [data_width-1:0] data = 0; 
+    logic [psum_width-1:0] psum = 0;
+    logic [psum_addr_width-1:0] psum_addr = 0;
 
     logic [x_hop_width-1:0] x_hop; 
     logic [y_hop_width-1:0] y_hop;
@@ -431,18 +435,21 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
 
             for(int i = 0; i < no_iterations; i++) begin 
 
-                psum_out.Receive(data);  
+                psum_out.Receive(psum);  
 
                 #FL;            
                 
-                $display("Sending psum\niff type = %b\npsum_out = %d\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
+                $display("Sending psum\niff type = %b\npsum_out = %d\npsum_addr = %d\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
                 
-                iff_type, data, source, dest, x_dir, y_dir, x_hop, y_hop);
+                iff_type, psum, psum_addr, source, dest, x_dir, y_dir, x_hop, y_hop);
 
-                packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, data};
+                packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, psum};
 
                 packet_out.Send(packet_data);
                 $display("packet = %b\n", packet_data);
+
+                psum_addr++;
+                
                 #BL;
 
             end

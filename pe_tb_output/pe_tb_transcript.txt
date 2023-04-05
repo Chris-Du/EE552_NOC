@@ -1,28 +1,3 @@
-# Reading C:/questasim64_10.4c/tcl/vsim/pref.tcl
-# //  Questa Sim-64
-# //  Version 10.4c win64 Jul 20 2015
-# //
-# //  Copyright 1991-2015 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
-# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
-# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
-# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
-# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
-# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
-# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
-# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
-# //
-project open C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/NOC
-# Loading project NOC
-# Compile of pe.sv was successful.
-# Compile of pe_tb.sv was successful.
-# Compile of shim.sv was successful.
-# Compile of submodules_tb.sv was successful.
-# Compile of SystemVerilogCSP.sv was successful.
-# Compile of dg_db.sv was successful with warnings.
-# 6 compiles, 0 failed with no errors.
 do complete_pe_wave.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
@@ -30,7 +5,7 @@ do complete_pe_wave.do
 # vmap work work 
 # Modifying C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/NOC.mpf
 # QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
-# Start time: 15:45:06 on Apr 04,2023
+# Start time: 16:55:29 on Apr 04,2023
 # vlog -reportprogress 300 -work work submodules_tb.sv 
 # -- Compiling package submodules_tb_sv_unit
 # -- Importing package SystemVerilogCSP
@@ -44,10 +19,12 @@ do complete_pe_wave.do
 # 	filter_mem_tb
 # 	multiplier_tb
 # 	complete_pe_tb
-# End time: 15:45:06 on Apr 04,2023, Elapsed time: 0:00:00
+# End time: 16:55:29 on Apr 04,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+# End time: 16:55:34 on Apr 04,2023, Elapsed time: 1:10:28
+# Errors: 0, Warnings: 1
 # vsim -novopt work.complete_pe_tb 
-# Start time: 15:45:06 on Apr 04,2023
+# Start time: 16:55:34 on Apr 04,2023
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # 
 # Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.complete_pe_tb
@@ -308,7 +285,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  94) @            268000000
 # Sending psum
 # iff type = 0
-# psum_out =            15
+# psum_out =   15
+# psum_addr =         0
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -390,7 +368,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            354000000
 # Sending psum
 # iff type = 0
-# psum_out =            10
+# psum_out =   10
+# psum_addr =         1
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -398,10 +377,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000001010
+# packet = 000010110110011010000000000000000000000000010000000001010
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @            355000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =           355000000. Final result =  6417849371328522.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           355000000. Final result =  6417849371336714.
 # Execution cycle=          3, Cycle Time=         86, 
 # 
 #     Average CycleTime=118.333333, Average Throughput=0.008451
@@ -473,7 +452,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            440000000
 # Sending psum
 # iff type = 0
-# psum_out =             6
+# psum_out =    6
+# psum_addr =         2
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -481,10 +461,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000110
+# packet = 000010110110011010000000000000000000000000100000000000110
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @            441000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =           441000000. Final result =  6417849371328518.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           441000000. Final result =  6417849371344902.
 # Execution cycle=          4, Cycle Time=         86, 
 # 
 #     Average CycleTime=110.250000, Average Throughput=0.009070
@@ -553,7 +533,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            526000000
 # Sending psum
 # iff type = 0
-# psum_out =             3
+# psum_out =    3
+# psum_addr =         3
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -561,10 +542,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000011
+# packet = 000010110110011010000000000000000000000000110000000000011
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @            527000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =           527000000. Final result =  6417849371328515.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           527000000. Final result =  6417849371353091.
 # Execution cycle=          5, Cycle Time=         86, 
 # 
 #     Average CycleTime=105.400000, Average Throughput=0.009488
@@ -633,7 +614,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            612000000
 # Sending psum
 # iff type = 0
-# psum_out =             1
+# psum_out =    1
+# psum_addr =         4
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -641,10 +623,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000001
+# packet = 000010110110011010000000000000000000000001000000000000001
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @            613000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =           613000000. Final result =  6417849371328513.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           613000000. Final result =  6417849371361281.
 # Execution cycle=          6, Cycle Time=         86, 
 # 
 #     Average CycleTime=102.166667, Average Throughput=0.009788
@@ -713,7 +695,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            698000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =         5
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -721,10 +704,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000001010000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @            699000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =           699000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           699000000. Final result =  6417849371369472.
 # Execution cycle=          7, Cycle Time=         86, 
 # 
 #     Average CycleTime=99.857143, Average Throughput=0.010014
@@ -793,7 +776,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            784000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =         6
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -801,10 +785,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000001100000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @            785000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =           785000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           785000000. Final result =  6417849371377664.
 # Execution cycle=          8, Cycle Time=         86, 
 # 
 #     Average CycleTime=98.125000, Average Throughput=0.010191
@@ -873,7 +857,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            870000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =         7
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -881,10 +866,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000001110000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @            871000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =           871000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           871000000. Final result =  6417849371385856.
 # Execution cycle=          9, Cycle Time=         86, 
 # 
 #     Average CycleTime=96.777778, Average Throughput=0.010333
@@ -953,7 +938,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @            956000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =         8
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -961,10 +947,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000010000000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @            957000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =           957000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =           957000000. Final result =  6417849371394048.
 # Execution cycle=         10, Cycle Time=         86, 
 # 
 #     Average CycleTime=95.700000, Average Throughput=0.010449
@@ -1033,7 +1019,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1042000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =         9
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1041,10 +1028,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000010010000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1043000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1043000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1043000000. Final result =  6417849371402240.
 # Execution cycle=         11, Cycle Time=         86, 
 # 
 #     Average CycleTime=94.818182, Average Throughput=0.010547
@@ -1113,7 +1100,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1128000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        10
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1121,10 +1109,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000010100000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1129000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1129000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1129000000. Final result =  6417849371410432.
 # Execution cycle=         12, Cycle Time=         86, 
 # 
 #     Average CycleTime=94.083333, Average Throughput=0.010629
@@ -1193,7 +1181,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1214000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        11
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1201,10 +1190,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000010110000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1215000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1215000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1215000000. Final result =  6417849371418624.
 # Execution cycle=         13, Cycle Time=         86, 
 # 
 #     Average CycleTime=93.461538, Average Throughput=0.010700
@@ -1273,7 +1262,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1300000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        12
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1281,10 +1271,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000011000000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1301000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1301000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1301000000. Final result =  6417849371426816.
 # Execution cycle=         14, Cycle Time=         86, 
 # 
 #     Average CycleTime=92.928571, Average Throughput=0.010761
@@ -1353,7 +1343,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1386000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        13
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1361,10 +1352,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000011010000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1387000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1387000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1387000000. Final result =  6417849371435008.
 # Execution cycle=         15, Cycle Time=         86, 
 # 
 #     Average CycleTime=92.466667, Average Throughput=0.010815
@@ -1433,7 +1424,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1472000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        14
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1441,10 +1433,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000011100000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1473000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1473000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1473000000. Final result =  6417849371443200.
 # Execution cycle=         16, Cycle Time=         86, 
 # 
 #     Average CycleTime=92.062500, Average Throughput=0.010862
@@ -1513,7 +1505,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1558000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        15
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1521,10 +1514,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000011110000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1559000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1559000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1559000000. Final result =  6417849371451392.
 # Execution cycle=         17, Cycle Time=         86, 
 # 
 #     Average CycleTime=91.705882, Average Throughput=0.010904
@@ -1593,7 +1586,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1644000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        16
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1601,10 +1595,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000100000000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1645000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1645000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1645000000. Final result =  6417849371459584.
 # Execution cycle=         18, Cycle Time=         86, 
 # 
 #     Average CycleTime=91.388889, Average Throughput=0.010942
@@ -1673,7 +1667,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1730000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        17
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1681,10 +1676,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000100010000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1731000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1731000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1731000000. Final result =  6417849371467776.
 # Execution cycle=         19, Cycle Time=         86, 
 # 
 #     Average CycleTime=91.105263, Average Throughput=0.010976
@@ -1753,7 +1748,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1816000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        18
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1761,10 +1757,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000100100000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1817000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1817000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1817000000. Final result =  6417849371475968.
 # Execution cycle=         20, Cycle Time=         86, 
 # 
 #     Average CycleTime=90.850000, Average Throughput=0.011007
@@ -1833,7 +1829,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1902000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        19
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1841,10 +1838,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000100110000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1903000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1903000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1903000000. Final result =  6417849371484160.
 # Execution cycle=         21, Cycle Time=         86, 
 # 
 #     Average CycleTime=90.619048, Average Throughput=0.011035
@@ -1912,7 +1909,8 @@ do complete_pe_wave.do
 ### complete_pe_tb.pe_i.psum_out.Receive Stalled(                  84) @           1988000000
 # Sending psum
 # iff type = 0
-# psum_out =             0
+# psum_out =    0
+# psum_addr =        20
 # source =  2
 # dest = 13
 # x_dir = 1
@@ -1920,10 +1918,10 @@ do complete_pe_wave.do
 # x_hop = 1
 # y_hop = 1
 # 
-# packet = 000010110110011010000000000000000000000000000000000000000
+# packet = 000010110110011010000000000000000000000101000000000000000
 # 
 ### complete_pe_tb.intf[1].Receive Stalled(                  86) @           1989000000
-# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1989000000. Final result =  6417849371328512.
+# --------Finished recieving in module complete_pe_tb.db. Simulation time =          1989000000. Final result =  6417849371492352.
 # Execution cycle=         22, Cycle Time=         86, 
 # 
 #     Average CycleTime=90.409091, Average Throughput=0.011061

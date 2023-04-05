@@ -138,19 +138,21 @@ module complete_pe_tb;
         #1000;
         */
         
-        /*
+        
         //PE2
         intf[0].Send('h1C200000000001F);
         #10;
         intf[0].Send('h0B2000504030201);
         #2000;
-        */
+        
 
+        /*
         //PE7
         intf[0].Send('h1C700000000001F);
         #10;
         intf[0].Send('h0B7000504030201);
         #2000;
+        */
 
         $stop;
     end
