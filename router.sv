@@ -45,6 +45,8 @@ module router(
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) PE_to_south();
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) PE_to_east();
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) PE_to_west();
+
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) empty[4:0]();
     
     logic [WIDTH_packet-1:0] 
         north_in_packet, north_out_packet,
@@ -59,7 +61,7 @@ module router(
 
     input_ctrl north_input(
         .in(north_in),
-        .north_out(),
+        .north_out(empty[0]),
         .south_out(north_to_south),
         .east_out(north_to_east),
         .west_out(north_to_west),
@@ -68,7 +70,7 @@ module router(
     input_ctrl south_input(
         .in(south_in),
         .north_out(south_to_north),
-        .south_out(),
+        .south_out(empty[1]),
         .east_out(south_to_east),
         .west_out(south_to_west),
         .PE_out(south_to_PE)
@@ -77,7 +79,7 @@ module router(
         .in(east_in),
         .north_out(east_to_north),
         .south_out(east_to_south),
-        .east_out(),
+        .east_out(empty[2]),
         .west_out(east_to_west),
         .PE_out(east_to_PE)
     );
@@ -86,7 +88,7 @@ module router(
         .north_out(west_to_north),
         .south_out(west_to_south),
         .east_out(west_to_east),
-        .west_out(),
+        .west_out(empty[3]),
         .PE_out(west_to_PE)
     );
     input_ctrl pe_input(
@@ -95,7 +97,7 @@ module router(
         .south_out(PE_to_south),
         .east_out(PE_to_east),
         .west_out(PE_to_west),
-        .PE_out()
+        .PE_out(empty[4])
     );
 
     output_ctrl north_output(
@@ -115,7 +117,7 @@ module router(
     output_ctrl east_output(
         .in1(north_to_east),
         .in2(south_to_east),
-        .in3(east_to_west),
+        .in3(PE_to_east),
         .in4(west_to_east),
         .out(east_out)
     );

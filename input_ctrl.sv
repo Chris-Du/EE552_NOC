@@ -12,8 +12,8 @@ module input_ctrl (
         in.Receive(in_packet);
         #FL;
         // check x hop
-        if(in_packet[44:42] > 0) begin
-            out_packet = {in_packet[56:47],in_packet[46:44]-1,in_packet[43:0]};
+        if(in_packet[46:44] > 0) begin
+            out_packet = {{in_packet[56:47]},{in_packet[46:44]-1'b1},{in_packet[43:0]}};
             if(in_packet[47]) begin
                 // going east
                 east_out.Send(out_packet);
@@ -23,9 +23,9 @@ module input_ctrl (
                 west_out.Send(out_packet);
             end
         end
-        //going horizontal
+        //going vetical
         else if(in_packet[42:40]>0) begin
-            out_packet = {in_packet[56:43],in_packet[42:40]-1,in_packet[39:0]};
+            out_packet = {in_packet[56:43],in_packet[42:40]-1'b1,in_packet[39:0]};
             if(in_packet[43]) begin
                 //north
                 north_out.Send(out_packet);

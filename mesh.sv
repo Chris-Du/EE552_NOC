@@ -66,11 +66,13 @@ module mesh (
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node7_8();
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node8_7();
 
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) empty[31:0]();
+
     router node1(
         node11_1, node1_11,
         node6_1, node1_6, 
         node2_1, node1_2, 
-        , , //west unconnected
+        empty[0], empty[1], //west unconnected
         node1_PE_in, node1_PE_out
     );
 
@@ -101,22 +103,22 @@ module mesh (
     router node5(
         node15_5, node5_15,
         node10_5, node5_10, 
-        ,, 
+        empty[2],empty[3], 
         node4_5, node5_4,
         node5_PE_in, node5_PE_out
     );
 
     router node6(
         node1_6, node6_1,
-        ,, 
+        empty[4],empty[5], 
         node7_6, node6_7, 
-        ,,
+        empty[6],empty[7],
         node6_PE_in, node6_PE_out
     );
 
     router node7(
         node2_7, node7_2,
-        , , 
+        empty[8],empty[9], 
         node8_7, node7_8, 
         node6_7, node7_6,
         node7_PE_in, node7_PE_out
@@ -126,7 +128,7 @@ module mesh (
 
     router node8(
         node3_8, node8_3,
-        , , 
+        empty[10],empty[11],
         node9_8, node8_9, 
         node7_8, node8_7,
         node8_PE_in, node8_PE_out
@@ -136,7 +138,7 @@ module mesh (
 
     router node9(
         node4_9, node9_4,
-        ,, 
+        empty[12],empty[13],
         node10_9, node9_10, 
         node8_9, node9_8,
         node9_PE_in, node9_PE_out
@@ -144,24 +146,24 @@ module mesh (
 
     router node10(
         node5_10, node10_5,
-        , , 
-        , , 
+        empty[14],empty[15], 
+        empty[16],empty[17],
         node9_10, node10_9,
         node10_PE_in, node10_PE_out
     );
 
     router node11(
-        , ,
+        empty[18],empty[19],
         node1_11, node11_1, 
         node12_11, node11_12, 
-        , ,
+        empty[20],empty[21],
         node11_PE_in, node11_PE_out
     );
 
     
 
     router node12(
-        , ,
+        empty[22],empty[23],
         node2_12, node12_2, 
         node13_12, node12_13, 
         node11_12, node12_11,
@@ -171,9 +173,9 @@ module mesh (
     
 
     router node13(
-        , ,
+        empty[24],empty[25],
         node3_13, node13_3, 
-        node13_14, node14_13, 
+        node14_13, node13_14, 
         node12_13, node13_12,
         node13_PE_in, node13_PE_out
     );
@@ -181,7 +183,7 @@ module mesh (
 
 
     router node14(
-         ,  ,
+        empty[26],empty[27],
         node4_14, node14_4, 
         node15_14, node14_15, 
         node13_14, node14_13,
@@ -190,9 +192,9 @@ module mesh (
 
 
     router node15(
-        , ,
+        empty[28],empty[29],
         node5_15, node15_5, 
-        , , 
+        empty[30],empty[31],
         node14_15, node15_14,
         node15_PE_in, node15_PE_out
     );
