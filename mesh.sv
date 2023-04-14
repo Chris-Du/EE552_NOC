@@ -1,3 +1,6 @@
+`timescale 1ns/1ps
+
+import SystemVerilogCSP::*;
 module mesh (
     interface node1_PE_in, node1_PE_out,
     node2_PE_in, node2_PE_out,
@@ -15,124 +18,182 @@ module mesh (
     node14_PE_in, node14_PE_out,
     node15_PE_in, node15_PE_out
 );
-    
+    parameter WIDTH_packet = 57;
+    parameter FL = 0, BL = 0;
+
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node1_2();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node2_1();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node1_11();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node11_1();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node1_6();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node6_1();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node12_2();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node2_12();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node7_2();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node2_7();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node3_2();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node2_3();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node13_3();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node3_13();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node8_3();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node3_8();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node4_3();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node3_4();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node14_4();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node4_14();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node9_4();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node4_9();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node5_4();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node4_5();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node15_5();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node5_15();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node10_5();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node5_10();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node7_6();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node6_7();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node15_14();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node14_15();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node13_12();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node12_13();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node13_14();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node14_13();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node12_11();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node11_12();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node10_9();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node9_10();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node9_8();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node8_9();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node7_8();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) node8_7();
+
     router node1(
-        node1_north_in, node1_north_out,
-        node1_south_in, node1_south_out, 
-        node1_east_in, node1_east_out, 
-        node1_west_in, node1_west_out,
+        node11_1, node1_11,
+        node6_1, node1_6, 
+        node2_1, node1_2, 
+        , , //west unconnected
         node1_PE_in, node1_PE_out
     );
 
     router node2(
-        node2_north_in, node2_north_out,
-        node2_south_in, node2_south_out, 
-        node2_east_in, node2_east_out, 
-        node2_west_in, node2_west_out,
+        node12_2, node2_12,
+        node7_2, node2_7, 
+        node3_2, node2_3, 
+        node1_2, node2_1,
         node2_PE_in, node2_PE_out
     );
 
     router node3(
-        node3_north_in, node3_north_out,
-        node3_south_in, node3_south_out, 
-        node3_east_in, node3_east_out, 
-        node3_west_in, node3_west_out,
+        node13_3, node3_13,
+        node8_3, node3_8, 
+        node4_3, node3_4, 
+        node2_3, node3_2,
         node3_PE_in, node3_PE_out
     );
 
     router node4(
-        node4_north_in, node4_north_out,
-        node4_south_in, node4_south_out, 
-        node4_east_in, node4_east_out, 
-        node4_west_in, node4_west_out,
+        node14_4, node4_14,
+        node9_4, node4_9, 
+        node5_4, node4_5, 
+        node3_4, node4_3,
         node4_PE_in, node4_PE_out
     );
 
     router node5(
-        node5_north_in, node5_north_out,
-        node5_south_in, node5_south_out, 
-        node5_east_in, node5_east_out, 
-        node5_west_in, node5_west_out,
+        node15_5, node5_15,
+        node10_5, node5_10, 
+        ,, 
+        node4_5, node5_4,
         node5_PE_in, node5_PE_out
     );
 
     router node6(
-        node6_north_in, node6_north_out,
-        node6_south_in, node6_south_out, 
-        node6_east_in, node6_east_out, 
-        node6_west_in, node6_west_out,
+        node1_6, node6_1,
+        ,, 
+        node7_6, node6_7, 
+        ,,
         node6_PE_in, node6_PE_out
     );
 
     router node7(
-        node7_north_in, node7_north_out,
-        node7_south_in, node7_south_out, 
-        node7_east_in, node7_east_out, 
-        node7_west_in, node7_west_out,
+        node2_7, node7_2,
+        , , 
+        node8_7, node7_8, 
+        node6_7, node7_6,
         node7_PE_in, node7_PE_out
     );
 
+    
+
     router node8(
-        node8_north_in, node8_north_out,
-        node8_south_in, node8_south_out, 
-        node8_east_in, node8_east_out, 
-        node8_west_in, node8_west_out,
+        node3_8, node8_3,
+        , , 
+        node9_8, node8_9, 
+        node7_8, node8_7,
         node8_PE_in, node8_PE_out
     );
     
+    
+
     router node9(
-        node9_north_in, node9_north_out,
-        node9_south_in, node9_south_out, 
-        node9_east_in, node9_east_out, 
-        node9_west_in, node9_west_out,
+        node4_9, node9_4,
+        ,, 
+        node10_9, node9_10, 
+        node8_9, node9_8,
         node9_PE_in, node9_PE_out
     );
 
     router node10(
-        node10_north_in, node10_north_out,
-        node10_south_in, node10_south_out, 
-        node10_east_in, node10_east_out, 
-        node10_west_in, node10_west_out,
+        node5_10, node10_5,
+        , , 
+        , , 
+        node9_10, node10_9,
         node10_PE_in, node10_PE_out
     );
 
     router node11(
-        node11_north_in, node11_north_out,
-        node11_south_in, node11_south_out, 
-        node11_east_in, node11_east_out, 
-        node11_west_in, node11_west_out,
+        , ,
+        node1_11, node11_1, 
+        node12_11, node11_12, 
+        , ,
         node11_PE_in, node11_PE_out
     );
 
+    
+
     router node12(
-        node12_north_in, node12_north_out,
-        node12_south_in, node12_south_out, 
-        node12_east_in, node12_east_out, 
-        node12_west_in, node12_west_out,
+        , ,
+        node2_12, node12_2, 
+        node13_12, node12_13, 
+        node11_12, node12_11,
         node12_PE_in, node12_PE_out
     );
 
+    
+
     router node13(
-        node13_north_in, node13_north_out,
-        node13_south_in, node13_south_out, 
-        node13_east_in, node13_east_out, 
-        node13_west_in, node13_west_out,
+        , ,
+        node3_13, node13_3, 
+        node13_14, node14_13, 
+        node12_13, node13_12,
         node13_PE_in, node13_PE_out
     );
 
+
+
     router node14(
-        node14_north_in, node14_north_out,
-        node14_south_in, node14_south_out, 
-        node14_east_in, node14_east_out, 
-        node14_west_in, node14_west_out,
+         ,  ,
+        node4_14, node14_4, 
+        node15_14, node14_15, 
+        node13_14, node14_13,
         node14_PE_in, node14_PE_out
     );
 
+
     router node15(
-        node15_north_in, node15_north_out,
-        node15_south_in, node15_south_out, 
-        node15_east_in, node15_east_out, 
-        node15_west_in, node15_west_out,
+        , ,
+        node5_15, node15_5, 
+        , , 
+        node14_15, node15_14,
         node15_PE_in, node15_PE_out
     );
 
