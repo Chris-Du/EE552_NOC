@@ -1,8 +1,7 @@
 /*
 TO DO:
-1. run through design flow one more time
-2. test tb
-3. pack psum send 21 output before forwarding ifmap
+1. test protection mechanism  
+
 
 */
 `timescale 1ns/100ps
@@ -21,7 +20,7 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
     parameter addr_width = 4;
     parameter data_width = 40;
     parameter x_hop_width = 3;
-    parameter y_hop_width = 2;
+    parameter y_hop_width = 3;
 
 
     parameter FL = 1;
@@ -72,6 +71,9 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
             f_data = packet_data[39:0];
             data = packet_data[39:0];
         end
+
+        $display("Receive packet in PE depack:\niff_type = %b\nsource = %d\ndest = %d\nx_dir = %b\nx_hop = %d\ny_dir = %b\ny_hop = %d\ndata = %d\n", 
+            iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, data);
 
         //filter packet arrive, then PE1-5 forward filter data to PE6-10
         if((iff_type == 0) && (dest == 1 || dest == 2 || dest == 3 || dest == 4 || dest == 5)) begin
@@ -182,6 +184,7 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                 addr_ifmap++;
                 #BL;
             end
+            addr_ifmap = 0;
             ifmap_ready = 1;
         end
         //filter
@@ -195,6 +198,7 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                 addr_filter++;
                 #BL;
             end
+            addr_filter = 0;
             filter_ready = 1;
         end
 
@@ -214,70 +218,70 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                         x_dir = 1;
                         y_dir = 1;
                         x_hop = 3'b010;
-                        y_hop = 2'b01;
+                        y_hop = 3'b001;
                 end
                     2: begin
                         source = 2;
                         x_dir = 1;
                         y_dir = 1;
                         x_hop = 3'b001;
-                        y_hop = 2'b01;
+                        y_hop = 3'b001;
                 end
                     3: begin
                         source = 3;
                         x_dir = 0;
                         y_dir = 1;
                         x_hop = 3'b000;
-                        y_hop = 2'b01;
+                        y_hop = 3'b001;
                 end
                     4: begin
                         source = 4;
                         x_dir = 0;
                         y_dir = 1;
                         x_hop = 3'b001;
-                        y_hop = 2'b01;
+                        y_hop = 3'b001;
                 end
                     5: begin
                         source = 5;
                         x_dir = 0;
                         y_dir = 1;
                         x_hop = 3'b010;
-                        y_hop = 2'b01;
+                        y_hop = 3'b001;
                 end
                     6: begin
                         source = 6;
                         x_dir = 1;
                         y_dir = 1;
                         x_hop = 3'b011;
-                        y_hop = 2'b10;
+                        y_hop = 3'b010;
                 end
                     7: begin
                         source = 7;
                         x_dir = 1;
                         y_dir = 1;
                         x_hop = 3'b010;
-                        y_hop = 2'b10;
+                        y_hop = 3'b010;
                 end
                     8: begin
                         source = 8;
                         x_dir = 1;
                         y_dir = 1;
                         x_hop = 3'b001;
-                        y_hop = 2'b10;
+                        y_hop = 3'b010;
                 end
                     9: begin
                         source = 9;
                         x_dir = 1;
                         y_dir = 1;
                         x_hop = 3'b000;
-                        y_hop = 2'b10;
+                        y_hop = 3'b010;
                 end
                     10: begin
                         source = 10;
                         x_dir = 0;
                         y_dir = 1;
                         x_hop = 3'b001;
-                        y_hop = 2'b10;
+                        y_hop = 3'b010;
                 end
 
             endcase
@@ -303,7 +307,6 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                 y_hopIntf.Send(y_hop); 
             join
 
-            filter_ready = 0;
             ifmap_ready = 0;
 
             #BL;
@@ -324,12 +327,14 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                     x_dir = 0;
                     y_dir = 0;
                     x_hop = 3'b001;
-                    y_hop = 2'b00;
+                    y_hop = 3'b000;
 
                     fork
+                        /*
                         //borrow f_forward channel to acknowledge packetizer
                         f_forwardIntf.Send(1);
-
+                        */
+                        
                         iff_typeIntf.Send(1); //send ifmap 
                         sourceIntf.Send(source);
                         destIntf.Send(dest);
@@ -344,7 +349,11 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                 end
 
             end
-            
+
+            //receive a signal from pack to receive next new packet
+            if_forwardIntf.Receive(if_forward);
+
+            #FL;
         end
     end  
 
@@ -357,12 +366,14 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
 endmodule
 
 
-module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, done, psum_out, iff_typeIntf, sourceIntf, destIntf, x_dirIntf, y_dirIntf, x_hopIntf, y_hopIntf, packet_out);
+module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, done, psum_out, 
+    iff_typeIntf, sourceIntf, destIntf, x_dirIntf, y_dirIntf, x_hopIntf, y_hopIntf, packet_out);
     parameter WIDTH = 8;
     parameter DEPTH_I = 25;
     parameter ADDR_I = 5; 
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
+    parameter DEPTH_C = 441;
 
     parameter FL = 1;
     parameter BL = 1;
@@ -371,8 +382,7 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
     parameter addr_width = 4;
     parameter data_width = 40;
     parameter psum_width = 13;
-    parameter x_hop_width = 3;
-    parameter y_hop_width = 2;
+    parameter hop_width = 3;
     parameter psum_addr_width = 27;
 
     logic [packet_width-1:0] packet_data = 0;
@@ -380,9 +390,7 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
     logic [psum_width-1:0] psum = 0;
     logic [psum_addr_width-1:0] psum_addr = 0;
 
-    logic [x_hop_width-1:0] x_hop; 
-    logic [y_hop_width-1:0] y_hop;
-
+    logic [hop_width-1:0] x_hop, y_hop; 
     logic x_dir, y_dir;
     logic [addr_width-1:0] source, dest;
     logic iff_type = 0;
@@ -448,7 +456,9 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
                 packet_out.Send(packet_data);
                 $display("packet = %b\n", packet_data);
 
-                psum_addr++;
+                if(psum_addr < DEPTH_C-1) psum_addr++;
+                //counter >= 440
+                else psum_addr = 0;
                 
                 #BL;
 
@@ -463,8 +473,37 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
                 if_forward = 1;
                 if_forwardIntf.Send(if_forward);
                 #BL;
-                if_forward = 0;  
+
+                //forward ifmap
+                fork
+                    iff_typeIntf.Receive(iff_type);
+                    sourceIntf.Receive(source);
+                    destIntf.Receive(dest);
+                    x_dirIntf.Receive(x_dir);
+                    y_dirIntf.Receive(y_dir);
+                    x_hopIntf.Receive(x_hop);
+                    y_hopIntf.Receive(y_hop); 
+                    data_forwardIntf.Receive(data);
+                join
+
+                #FL;
+
+                $display("Sending forwarding data\niff type = %b\ndata = %b\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
+                iff_type, data, source, dest, x_dir, y_dir, x_hop, y_hop);
+
+                packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, data};
+
+                packet_out.Send(packet_data);
+                $display("packet = %b\n", packet_data);
+                #BL;
+
             end
+
+            //send a signal to depack to allow to receive next new packet
+            if_forward = 0;  
+            if_forwardIntf.Send(if_forward);
+
+            #BL;
             
         end
     end
@@ -480,7 +519,7 @@ module ifmap_mem(interface ifmap_in, ifmap_addr, ifmap_out_addr, ifmap_out);
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
 
-    parameter FL = 4;
+    parameter FL = 2;
     parameter BL = 2;
 
     logic [ADDR_I-1:0] in_addr, out_addr;
@@ -526,7 +565,7 @@ module filter_mem(interface filter_in, filter_addr, filter_out_addr, filter_out)
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
 
-    parameter FL = 4;
+    parameter FL = 2;
     parameter BL = 2;
 
     logic [ADDR_F-1:0] in_addr, out_addr;
@@ -573,7 +612,7 @@ module multiplier(interface ifmap_out, filter_out, mult_out);
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
 
-    parameter FL = 4;
+    parameter FL = 2;
     parameter BL = 2;
 
     logic [WIDTH-1:0] data0, data1, result;
@@ -605,7 +644,7 @@ module adder(interface mult_out, psum_in, accum_out, add_sel, adder_out);
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
 
-    parameter FL = 4;
+    parameter FL = 2;
     parameter BL = 2;
 
     logic [WIDTH-1:0] data0, data1, result;
@@ -646,7 +685,7 @@ module split(interface adder_out, split_sel, to_accum, psum_out);
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
 
-    parameter FL = 4;
+    parameter FL = 2;
     parameter BL = 2;
 
     logic [WIDTH-1:0] data; 
@@ -685,7 +724,7 @@ module accumulator(interface from_split, acc_clear, to_adder);
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
 
-    parameter FL = 4;
+    parameter FL = 2;
     parameter BL = 2;
 
     logic [WIDTH-1:0] data;
@@ -723,7 +762,7 @@ module control(interface start, ifmap_out_addr, filter_out_addr, acc_clear, add_
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
 
-    parameter FL = 4;
+    parameter FL = 2;
     parameter BL = 2;
 
     logic st;
@@ -782,7 +821,7 @@ module pe(interface packet_in, packet_out);
     parameter DEPTH_F = 5;
     parameter ADDR_F = 3;
 
-    parameter FL = 4;
+    parameter FL = 2;
     parameter BL = 2;
 
     parameter packet_width = 57;
@@ -816,24 +855,24 @@ module pe(interface packet_in, packet_out);
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) if_forwardIntf ();
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) data_forwardIntf ();
 
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(10)) intf [3:0]();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) intf [3:0]();
 
-    pe_depacketizer #(.WIDTH(packet_width), .DEPTH_I(DEPTH_I), .ADDR_I(ADDR_I), .DEPTH_F(DEPTH_F), .ADDR_F(ADDR_F))
+    pe_depacketizer #(.WIDTH(WIDTH))
     pedep (.packet_in(packet_in), .ifmap_in(ifmap_in), .ifmap_addr(ifmap_addr), .filter_in(filter_in), .filter_addr(filter_addr), 
     .psum_in(psum_in), .start(start), .iff_typeIntf(iff_typeIntf), .sourceIntf(sourceIntf), .destIntf(destIntf), .x_dirIntf(x_dirIntf), .y_dirIntf(y_dirIntf), .x_hopIntf(x_hopIntf), .y_hopIntf(y_hopIntf), 
     .if_forwardIntf(if_forwardIntf), .f_forwardIntf(f_forwardIntf), .data_forwardIntf(data_forwardIntf));    
     
-    pe_packetizer #(.WIDTH(packet_width), .DEPTH_I(DEPTH_I), .ADDR_I(ADDR_I), .DEPTH_F(DEPTH_F), .ADDR_F(ADDR_F))
+    pe_packetizer #(.WIDTH(WIDTH))
     pep (.f_forwardIntf(f_forwardIntf), .if_forwardIntf(if_forwardIntf), .data_forwardIntf(data_forwardIntf), .done(done), .psum_out(psum_out), 
     .iff_typeIntf(iff_typeIntf), .sourceIntf(sourceIntf), .destIntf(destIntf), .x_dirIntf(x_dirIntf), .y_dirIntf(y_dirIntf), .x_hopIntf(x_hopIntf), .y_hopIntf(y_hopIntf), .packet_out(packet_out));
     
-    control #(.WIDTH(WIDTH), .DEPTH_I(DEPTH_I), .ADDR_I(ADDR_I), .DEPTH_F(DEPTH_F), .ADDR_F(ADDR_F))
+    control #(.WIDTH(WIDTH), .FL(FL), .BL(BL))
     ctrl (.start(start), .ifmap_out_addr(ifmap_out_addr), .filter_out_addr(filter_out_addr), .acc_clear(acc_clear), .add_sel(add_sel), .split_sel(split_sel), .done(done));
 
-    ifmap_mem  #(.WIDTH(WIDTH), .DEPTH_I(DEPTH_I), .ADDR_I(ADDR_I), .DEPTH_F(DEPTH_F), .ADDR_F(ADDR_F))
+    ifmap_mem  #(.WIDTH(WIDTH), .FL(FL), .BL(BL))
     i_mem (.ifmap_in(ifmap_in), .ifmap_addr(ifmap_addr), .ifmap_out_addr(ifmap_out_addr), .ifmap_out(ifmap_out));
 
-    filter_mem #(.WIDTH(WIDTH), .DEPTH_I(DEPTH_I), .ADDR_I(ADDR_I), .DEPTH_F(DEPTH_F), .ADDR_F(ADDR_F))
+    filter_mem #(.WIDTH(WIDTH), .FL(FL), .BL(BL))
     f_mem (.filter_in(filter_in), .filter_addr(filter_addr), .filter_out_addr(filter_out_addr), .filter_out(filter_out));
 
     multiplier #(.WIDTH(WIDTH), .FL(FL), .BL(BL))

@@ -63,13 +63,14 @@ module output_mem_depacketizer(interface packet_in, output_done, conv_mem_in_ts1
        	if(source == 13) begin
             fork
                 conv_mem_in_ts1.Send(conv_out);
-                conv_mem_addr_ts1.Send(conv_out_ts1_addr);
+                conv_mem_addr_ts1.Send(addr_psum);
             join
 
             //$display("send conv out in depack\nconv_data = %d @ mem_addr = %d\n", conv_out, conv_out_ts1_addr);
             
             //if addr reaches 440, flag ts1_ready 
-            if(conv_out_ts1_addr == DEPTH_C-1) ts1_ready = 1;
+            if(conv_out_ts1_addr >= DEPTH_C-1) ts1_ready = 1;
+            //counter < 440
             else conv_out_ts1_addr++; 
                 
        	end
@@ -77,11 +78,12 @@ module output_mem_depacketizer(interface packet_in, output_done, conv_mem_in_ts1
        	else begin
             fork
                 conv_mem_in_ts2.Send(conv_out);
-                conv_mem_addr_ts2.Send(conv_out_ts2_addr);
+                conv_mem_addr_ts2.Send(addr_psum);
             join
 
             //if addr reaches 440, flag ts2_ready 
-            if(conv_out_ts2_addr == DEPTH_C-1) ts2_ready = 1;
+            if(conv_out_ts2_addr >= DEPTH_C-1) ts2_ready = 1;
+            //counter < 440
             else conv_out_ts2_addr++;
        		
        	end
@@ -97,6 +99,8 @@ module output_mem_depacketizer(interface packet_in, output_done, conv_mem_in_ts1
 
             ts1_ready = 0;
             ts2_ready = 0;
+            conv_out_ts1_addr = 0;
+            conv_out_ts2_addr = 0;
 
             output_done.Receive(out_done);
 

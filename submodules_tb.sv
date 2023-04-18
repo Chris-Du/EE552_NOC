@@ -682,7 +682,8 @@ module output_mem_array_tb;
 endmodule
 
 module output_mem_tb;
-    parameter DEPTH_C = 4;
+    //parameter DEPTH_C = 4;
+    parameter DEPTH_C = 9;
     parameter FL = 2;
     parameter BL = 2;
 
@@ -714,6 +715,7 @@ module output_mem_tb;
     data_bucket db6 (intf[6]);
 
     initial begin
+        /*
         //ts1[0] = 74
         #2;
         iff_type = 2'h0;
@@ -825,9 +827,261 @@ module output_mem_tb;
         conv_output = 13'd60;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
         intf[0].Send(packet_data);
+        */
 
+        //ts1[0] = 12
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h0;
+        conv_output = 13'd12;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
 
-        #50;
+        //ts2[0] = 90
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h0;
+        conv_output = 13'd90;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts1[1] = 56
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h1;
+        conv_output = 13'd56;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts2[1] = 23
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h1;
+        conv_output = 13'd23;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts1[2] = 98
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h2;
+        conv_output = 13'd98;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts2[2] = 56
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h2;
+        conv_output = 13'd56;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts1[3] = 23
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h3;
+        conv_output = 13'd23;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts2[3] = 78
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h3;
+        conv_output = 13'd78;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts1[4] = 89
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h4;
+        conv_output = 13'd89;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts2[4] = 12
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h4;
+        conv_output = 13'd12;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts1[5] = 45
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h5;
+        conv_output = 13'd45;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts2[5] = 34
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h5;
+        conv_output = 13'd34;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts1[6] = 67
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h6;
+        conv_output = 13'd67;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts2[6] = 67
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h6;
+        conv_output = 13'd67;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts1[7] = 34
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h7;
+        conv_output = 13'd34;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts2[7] = 89
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h7;
+        conv_output = 13'd89;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts1[8] = 78
+        #2;
+        iff_type = 2'h0;
+        source = 4'd13;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h8;
+        conv_output = 13'd78;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        //ts2[8] = 45
+        #2;
+        iff_type = 2'h0;
+        source = 4'd14;
+        dest = 4'd15;
+        x_dir = 1'b1;
+        x_hop = 3'b111;
+        y_dir = 1'b1;
+        y_hop = 3'b111;    
+        psum_addr = 27'h8;
+        conv_output = 13'd45;
+        packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
+        intf[0].Send(packet_data);
+
+        #100;
         $stop;
     end
 

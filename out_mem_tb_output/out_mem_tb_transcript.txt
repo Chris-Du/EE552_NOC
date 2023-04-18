@@ -1,0 +1,821 @@
+# Reading C:/questasim64_10.4c/tcl/vsim/pref.tcl
+# //  Questa Sim-64
+# //  Version 10.4c win64 Jul 20 2015
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+project open C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/NOC
+# Loading project NOC
+# Compile of pe.sv was successful.
+# Compile of pe_tb.sv was successful.
+# Compile of shim.sv was successful.
+# Compile of submodules_tb.sv was successful.
+# Compile of SystemVerilogCSP.sv was successful.
+# Compile of dg_db.sv was successful with warnings.
+# Compile of partial_sum.sv was successful with warnings.
+# Compile of output_mem.sv was successful.
+# 8 compiles, 0 failed with no errors.
+do mem_out_wave.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# QuestaSim-64 vmap 10.4c Lib Mapping Utility 2015.07 Jul 20 2015
+# vmap work work 
+# Modifying C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/NOC.mpf
+# QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
+# Start time: 18:59:46 on Apr 17,2023
+# vlog -reportprogress 300 -work work submodules_tb.sv 
+# -- Compiling package submodules_tb_sv_unit
+# -- Importing package SystemVerilogCSP
+# -- Compiling module ifmap_mem_tb
+# -- Compiling module filter_mem_tb
+# -- Compiling module multiplier_tb
+# -- Compiling module complete_pe_tb
+# -- Compiling module partial_sum_tb
+# -- Compiling module output_mem_depacketizer_tb
+# -- Compiling module output_mem_array_tb
+# -- Compiling module output_mem_tb
+# 
+# Top level modules:
+# 	ifmap_mem_tb
+# 	filter_mem_tb
+# 	multiplier_tb
+# 	complete_pe_tb
+# 	partial_sum_tb
+# 	output_mem_depacketizer_tb
+# 	output_mem_array_tb
+# 	output_mem_tb
+# End time: 18:59:46 on Apr 17,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt work.output_mem_tb 
+# Start time: 18:59:46 on Apr 17,2023
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.output_mem_tb
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.submodules_tb_sv_unit
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.SystemVerilogCSP
+# Loading sv_std.std
+# Loading work.SystemVerilogCSP
+# Loading work.submodules_tb_sv_unit
+# Loading work.output_mem_tb
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.output_mem
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.output_mem_sv_unit
+# Loading work.output_mem_sv_unit
+# Loading work.output_mem
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.Channel
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.SystemVerilogCSP_sv_unit
+# Loading work.SystemVerilogCSP_sv_unit
+# Loading work.Channel
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.output_mem_depacketizer
+# Loading work.output_mem_depacketizer
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.output_mem_control
+# Loading work.output_mem_control
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.output_mem_array
+# Loading work.output_mem_array
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.output_mem_out
+# Loading work.output_mem_out
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.data_bucket
+# Refreshing C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/work.dg_db_sv_unit
+# Loading work.dg_db_sv_unit
+# Loading work.data_bucket
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: CHRIS  Hostname: XPS15  ProcessID: 38452
+# 
+#           Attempting to use alternate WLF file "./wlfth9ibdm".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlfth9ibdm
+# 
+# data_bucket starts output_mem_tb.db1                    0
+# Start recieving in module output_mem_tb.db1. Simulation time =                   0
+# data_bucket starts output_mem_tb.db2                    0
+# Start recieving in module output_mem_tb.db2. Simulation time =                   0
+# data_bucket starts output_mem_tb.db3                    0
+# Start recieving in module output_mem_tb.db3. Simulation time =                   0
+# data_bucket starts output_mem_tb.db4                    0
+# Start recieving in module output_mem_tb.db4. Simulation time =                   0
+# data_bucket starts output_mem_tb.db5                    0
+# Start recieving in module output_mem_tb.db5. Simulation time =                   0
+# data_bucket starts output_mem_tb.db6                    0
+# Start recieving in module output_mem_tb.db6. Simulation time =                   0
+# --------Finished recieving in module output_mem_tb.db5. Simulation time =                   0. Final result =                 1.
+# --------Finished recieving in module output_mem_tb.db4. Simulation time =                   0. Final result =                 1.
+# --------Finished recieving in module output_mem_tb.db1. Simulation time =                   0. Final result =                 1.
+# ** Error (suppressible): (vsim-8630) C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/dg_db.sv(62): Infinity results from division operation.
+# 
+# Execution cycle=          1, Cycle Time=          0, 
+# 
+#     Average CycleTime=0.000000, Average Throughput=1.#INF00
+# data_bucket starts output_mem_tb.db5                    0
+# Start recieving in module output_mem_tb.db5. Simulation time =                   0
+# ** Error (suppressible): (vsim-8630) C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/dg_db.sv(62): Infinity results from division operation.
+# 
+# Execution cycle=          1, Cycle Time=          0, 
+# 
+#     Average CycleTime=0.000000, Average Throughput=1.#INF00
+# data_bucket starts output_mem_tb.db4                    0
+# Start recieving in module output_mem_tb.db4. Simulation time =                   0
+# ** Error (suppressible): (vsim-8630) C:/Users/dpl19/OneDrive/Desktop/EE552/NOC/dg_db.sv(62): Infinity results from division operation.
+# 
+# Execution cycle=          1, Cycle Time=          0, 
+# 
+#     Average CycleTime=0.000000, Average Throughput=1.#INF00
+# data_bucket starts output_mem_tb.db1                    0
+# Start recieving in module output_mem_tb.db1. Simulation time =                   0
+### output_mem_tb.intf[0].Receive Stalled(                   2) @              2000000
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         0
+# psum =   12
+# 
+### output_mem_tb.om.mem_in1_ts1.Receive Stalled(                   3) @              3000000
+### output_mem_tb.om.mem_addr1_ts1.Receive Stalled(                   3) @              3000000
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         0
+# psum =   90
+# 
+# write data =   12 @ addr =   0
+# 
+### output_mem_tb.om.mem_in1_ts2.Receive Stalled(                   5) @              5000000
+### output_mem_tb.om.mem_addr1_ts2.Receive Stalled(                   5) @              5000000
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         1
+# psum =   56
+# 
+# write data =   90 @ addr =   0
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         1
+# psum =   23
+# 
+# write data =   56 @ addr =   1
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         2
+# psum =   98
+# 
+# write data =   23 @ addr =   1
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         2
+# psum =   56
+# 
+# write data =   98 @ addr =   2
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         3
+# psum =   23
+# 
+# write data =   56 @ addr =   2
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         3
+# psum =   78
+# 
+# write data =   23 @ addr =   3
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         4
+# psum =   89
+# 
+# write data =   78 @ addr =   3
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         4
+# psum =   12
+# 
+# write data =   89 @ addr =   4
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         5
+# psum =   45
+# 
+# write data =   12 @ addr =   4
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         5
+# psum =   34
+# 
+# write data =   45 @ addr =   5
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         6
+# psum =   67
+# 
+# write data =   34 @ addr =   5
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         6
+# psum =   67
+# 
+# write data =   67 @ addr =   6
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         7
+# psum =   34
+# 
+# write data =   67 @ addr =   6
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         7
+# psum =   89
+# 
+# write data =   34 @ addr =   7
+# 
+# ts1_ready = 0
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 13
+# dest = 15
+# psum addr =         8
+# psum =   78
+# 
+# write data =   89 @ addr =   7
+# 
+# ts1_ready = 1
+# ts2_ready = 0
+# 
+# Receive packet in output mem depack:
+# source = 14
+# dest = 15
+# psum addr =         8
+# psum =   45
+# 
+# write data =   78 @ addr =   8
+# 
+# ts1_ready = 1
+# ts2_ready = 1
+# 
+### output_mem_tb.om.start.Receive Stalled(                  38) @             38000000
+# write data =   45 @ addr =   8
+# 
+### output_mem_tb.om.out_addr_ts1.Receive Stalled(                  40) @             40000000
+# read data =   12 @ addr =   0
+# 
+### output_mem_tb.om.mem_out_ts1.Receive Stalled(                  40) @             42000000
+# write residue =   12 @ addr =           0 for ts1
+# 
+# output spike = 0 @ addr =           0 for ts1
+# 
+### output_mem_tb.om.mem_in2_ts1.Receive Stalled(                  44) @             44000000
+### output_mem_tb.om.mem_addr2_ts1.Receive Stalled(                  44) @             44000000
+### output_mem_tb.intf[3].Receive Stalled(                  44) @             44000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            44000000. Final result =                 0.
+### output_mem_tb.intf[2].Receive Stalled(                  44) @             44000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            44000000. Final result =                 0.
+# Execution cycle=          1, Cycle Time=         44, 
+# 
+#     Average CycleTime=44.000000, Average Throughput=0.022727
+# data_bucket starts output_mem_tb.db3                   44
+# Start recieving in module output_mem_tb.db3. Simulation time =            44000000
+# Execution cycle=          1, Cycle Time=         44, 
+# 
+#     Average CycleTime=44.000000, Average Throughput=0.022727
+# data_bucket starts output_mem_tb.db2                   44
+# Start recieving in module output_mem_tb.db2. Simulation time =            44000000
+# write data =   12 @ addr =   0
+# 
+# read data =   56 @ addr =   1
+# 
+# write residue =   56 @ addr =           1 for ts1
+# 
+# output spike = 0 @ addr =           1 for ts1
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             48000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            48000000. Final result =                 0.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             48000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            48000000. Final result =                 1.
+# Execution cycle=          2, Cycle Time=          4, 
+# 
+#     Average CycleTime=24.000000, Average Throughput=0.041667
+# data_bucket starts output_mem_tb.db3                   48
+# Start recieving in module output_mem_tb.db3. Simulation time =            48000000
+# Execution cycle=          2, Cycle Time=          4, 
+# 
+#     Average CycleTime=24.000000, Average Throughput=0.041667
+# data_bucket starts output_mem_tb.db2                   48
+# Start recieving in module output_mem_tb.db2. Simulation time =            48000000
+# write data =   56 @ addr =   1
+# 
+# read data =   98 @ addr =   2
+# 
+# write residue =   34 @ addr =           2 for ts1
+# 
+# output spike = 1 @ addr =           2 for ts1
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             52000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            52000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             52000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            52000000. Final result =                 2.
+# Execution cycle=          3, Cycle Time=          4, 
+# 
+#     Average CycleTime=17.333333, Average Throughput=0.057692
+# data_bucket starts output_mem_tb.db3                   52
+# Start recieving in module output_mem_tb.db3. Simulation time =            52000000
+# Execution cycle=          3, Cycle Time=          4, 
+# 
+#     Average CycleTime=17.333333, Average Throughput=0.057692
+# data_bucket starts output_mem_tb.db2                   52
+# Start recieving in module output_mem_tb.db2. Simulation time =            52000000
+# write data =   34 @ addr =   2
+# 
+# read data =   23 @ addr =   3
+# 
+# write residue =   23 @ addr =           3 for ts1
+# 
+# output spike = 0 @ addr =           3 for ts1
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             56000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            56000000. Final result =                 0.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             56000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            56000000. Final result =                 3.
+# Execution cycle=          4, Cycle Time=          4, 
+# 
+#     Average CycleTime=14.000000, Average Throughput=0.071429
+# data_bucket starts output_mem_tb.db3                   56
+# Start recieving in module output_mem_tb.db3. Simulation time =            56000000
+# Execution cycle=          4, Cycle Time=          4, 
+# 
+#     Average CycleTime=14.000000, Average Throughput=0.071429
+# data_bucket starts output_mem_tb.db2                   56
+# Start recieving in module output_mem_tb.db2. Simulation time =            56000000
+# write data =   23 @ addr =   3
+# 
+# read data =   89 @ addr =   4
+# 
+# write residue =   25 @ addr =           4 for ts1
+# 
+# output spike = 1 @ addr =           4 for ts1
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             60000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            60000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             60000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            60000000. Final result =                 4.
+# Execution cycle=          5, Cycle Time=          4, 
+# 
+#     Average CycleTime=12.000000, Average Throughput=0.083333
+# data_bucket starts output_mem_tb.db3                   60
+# Start recieving in module output_mem_tb.db3. Simulation time =            60000000
+# Execution cycle=          5, Cycle Time=          4, 
+# 
+#     Average CycleTime=12.000000, Average Throughput=0.083333
+# data_bucket starts output_mem_tb.db2                   60
+# Start recieving in module output_mem_tb.db2. Simulation time =            60000000
+# write data =   25 @ addr =   4
+# 
+# read data =   45 @ addr =   5
+# 
+# write residue =   45 @ addr =           5 for ts1
+# 
+# output spike = 0 @ addr =           5 for ts1
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             64000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            64000000. Final result =                 0.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             64000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            64000000. Final result =                 5.
+# Execution cycle=          6, Cycle Time=          4, 
+# 
+#     Average CycleTime=10.666667, Average Throughput=0.093750
+# data_bucket starts output_mem_tb.db3                   64
+# Start recieving in module output_mem_tb.db3. Simulation time =            64000000
+# Execution cycle=          6, Cycle Time=          4, 
+# 
+#     Average CycleTime=10.666667, Average Throughput=0.093750
+# data_bucket starts output_mem_tb.db2                   64
+# Start recieving in module output_mem_tb.db2. Simulation time =            64000000
+# write data =   45 @ addr =   5
+# 
+# read data =   67 @ addr =   6
+# 
+# write residue =    3 @ addr =           6 for ts1
+# 
+# output spike = 1 @ addr =           6 for ts1
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             68000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            68000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             68000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            68000000. Final result =                 6.
+# Execution cycle=          7, Cycle Time=          4, 
+# 
+#     Average CycleTime=9.714286, Average Throughput=0.102941
+# data_bucket starts output_mem_tb.db3                   68
+# Start recieving in module output_mem_tb.db3. Simulation time =            68000000
+# Execution cycle=          7, Cycle Time=          4, 
+# 
+#     Average CycleTime=9.714286, Average Throughput=0.102941
+# data_bucket starts output_mem_tb.db2                   68
+# Start recieving in module output_mem_tb.db2. Simulation time =            68000000
+# write data =    3 @ addr =   6
+# 
+# read data =   34 @ addr =   7
+# 
+# write residue =   34 @ addr =           7 for ts1
+# 
+# output spike = 0 @ addr =           7 for ts1
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             72000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            72000000. Final result =                 0.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             72000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            72000000. Final result =                 7.
+# Execution cycle=          8, Cycle Time=          4, 
+# 
+#     Average CycleTime=9.000000, Average Throughput=0.111111
+# data_bucket starts output_mem_tb.db3                   72
+# Start recieving in module output_mem_tb.db3. Simulation time =            72000000
+# Execution cycle=          8, Cycle Time=          4, 
+# 
+#     Average CycleTime=9.000000, Average Throughput=0.111111
+# data_bucket starts output_mem_tb.db2                   72
+# Start recieving in module output_mem_tb.db2. Simulation time =            72000000
+# write data =   34 @ addr =   7
+# 
+# read data =   78 @ addr =   8
+# 
+# write residue =   14 @ addr =           8 for ts1
+# 
+# output spike = 1 @ addr =           8 for ts1
+# 
+### output_mem_tb.om.out_addr_ts2.Receive Stalled(                  76) @             76000000
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             76000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            76000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             76000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            76000000. Final result =                 8.
+# Execution cycle=          9, Cycle Time=          4, 
+# 
+#     Average CycleTime=8.444444, Average Throughput=0.118421
+# data_bucket starts output_mem_tb.db3                   76
+# Start recieving in module output_mem_tb.db3. Simulation time =            76000000
+# Execution cycle=          9, Cycle Time=          4, 
+# 
+#     Average CycleTime=8.444444, Average Throughput=0.118421
+# data_bucket starts output_mem_tb.db2                   76
+# Start recieving in module output_mem_tb.db2. Simulation time =            76000000
+# write data =   14 @ addr =   8
+# 
+# +++++++++++++++++++++++++++++++SEND 2 TO TS_R, SEND 1 TO LAYER_R
+### output_mem_tb.intf[5].Receive Stalled(                  78) @             78000000
+# --------Finished recieving in module output_mem_tb.db5. Simulation time =            78000000. Final result =                 1.
+### output_mem_tb.intf[4].Receive Stalled(                  78) @             78000000
+# --------Finished recieving in module output_mem_tb.db4. Simulation time =            78000000. Final result =                 2.
+# Execution cycle=          2, Cycle Time=         78, 
+# 
+#     Average CycleTime=39.000000, Average Throughput=0.025641
+# data_bucket starts output_mem_tb.db5                   78
+# Start recieving in module output_mem_tb.db5. Simulation time =            78000000
+# Execution cycle=          2, Cycle Time=         78, 
+# 
+#     Average CycleTime=39.000000, Average Throughput=0.025641
+# data_bucket starts output_mem_tb.db4                   78
+# Start recieving in module output_mem_tb.db4. Simulation time =            78000000
+### output_mem_tb.om.mem_out_ts1.Send Stalled(                   2) @             80000000
+# read data =   12 @ addr =   0
+# 
+### output_mem_tb.om.mem_out_ts2.Send Stalled(                   2) @             80000000
+# read data =   90 @ addr =   0
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =   38 @ addr =           0 for ts2
+# 
+# output spike = 1 @ addr =           0 for ts2
+# 
+### output_mem_tb.om.out_addr_ts1.Send Stalled(                   2) @             82000000
+### output_mem_tb.om.mem_in2_ts2.Receive Stalled(                  82) @             82000000
+### output_mem_tb.om.mem_addr2_ts2.Receive Stalled(                  82) @             82000000
+### output_mem_tb.intf[3].Receive Stalled(                   6) @             82000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            82000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   6) @             82000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            82000000. Final result =                 0.
+# Execution cycle=         10, Cycle Time=          6, 
+# 
+#     Average CycleTime=8.200000, Average Throughput=0.121951
+# data_bucket starts output_mem_tb.db3                   82
+# Start recieving in module output_mem_tb.db3. Simulation time =            82000000
+# Execution cycle=         10, Cycle Time=          6, 
+# 
+#     Average CycleTime=8.200000, Average Throughput=0.121951
+# data_bucket starts output_mem_tb.db2                   82
+# Start recieving in module output_mem_tb.db2. Simulation time =            82000000
+# write data =   38 @ addr =   0
+# 
+# read data =   23 @ addr =   1
+# 
+# read data =   56 @ addr =   1
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =   15 @ addr =           1 for ts2
+# 
+# output spike = 1 @ addr =           1 for ts2
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             86000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            86000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             86000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            86000000. Final result =                 1.
+# Execution cycle=         11, Cycle Time=          4, 
+# 
+#     Average CycleTime=7.818182, Average Throughput=0.127907
+# data_bucket starts output_mem_tb.db3                   86
+# Start recieving in module output_mem_tb.db3. Simulation time =            86000000
+# Execution cycle=         11, Cycle Time=          4, 
+# 
+#     Average CycleTime=7.818182, Average Throughput=0.127907
+# data_bucket starts output_mem_tb.db2                   86
+# Start recieving in module output_mem_tb.db2. Simulation time =            86000000
+# write data =   15 @ addr =   1
+# 
+# read data =   56 @ addr =   2
+# 
+# read data =   34 @ addr =   2
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =   26 @ addr =           2 for ts2
+# 
+# output spike = 1 @ addr =           2 for ts2
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             90000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            90000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             90000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            90000000. Final result =                 2.
+# Execution cycle=         12, Cycle Time=          4, 
+# 
+#     Average CycleTime=7.500000, Average Throughput=0.133333
+# data_bucket starts output_mem_tb.db3                   90
+# Start recieving in module output_mem_tb.db3. Simulation time =            90000000
+# Execution cycle=         12, Cycle Time=          4, 
+# 
+#     Average CycleTime=7.500000, Average Throughput=0.133333
+# data_bucket starts output_mem_tb.db2                   90
+# Start recieving in module output_mem_tb.db2. Simulation time =            90000000
+# write data =   26 @ addr =   2
+# 
+# read data =   78 @ addr =   3
+# 
+# read data =   23 @ addr =   3
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =   37 @ addr =           3 for ts2
+# 
+# output spike = 1 @ addr =           3 for ts2
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             94000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            94000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             94000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            94000000. Final result =                 3.
+# Execution cycle=         13, Cycle Time=          4, 
+# 
+#     Average CycleTime=7.230769, Average Throughput=0.138298
+# data_bucket starts output_mem_tb.db3                   94
+# Start recieving in module output_mem_tb.db3. Simulation time =            94000000
+# Execution cycle=         13, Cycle Time=          4, 
+# 
+#     Average CycleTime=7.230769, Average Throughput=0.138298
+# data_bucket starts output_mem_tb.db2                   94
+# Start recieving in module output_mem_tb.db2. Simulation time =            94000000
+# write data =   37 @ addr =   3
+# 
+# read data =   12 @ addr =   4
+# 
+# read data =   25 @ addr =   4
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =   37 @ addr =           4 for ts2
+# 
+# output spike = 0 @ addr =           4 for ts2
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @             98000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =            98000000. Final result =                 0.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @             98000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =            98000000. Final result =                 4.
+# Execution cycle=         14, Cycle Time=          4, 
+# 
+#     Average CycleTime=7.000000, Average Throughput=0.142857
+# data_bucket starts output_mem_tb.db3                   98
+# Start recieving in module output_mem_tb.db3. Simulation time =            98000000
+# Execution cycle=         14, Cycle Time=          4, 
+# 
+#     Average CycleTime=7.000000, Average Throughput=0.142857
+# data_bucket starts output_mem_tb.db2                   98
+# Start recieving in module output_mem_tb.db2. Simulation time =            98000000
+# write data =   37 @ addr =   4
+# 
+# read data =   34 @ addr =   5
+# 
+# read data =   45 @ addr =   5
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =   15 @ addr =           5 for ts2
+# 
+# output spike = 1 @ addr =           5 for ts2
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @            102000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =           102000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @            102000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =           102000000. Final result =                 5.
+# Execution cycle=         15, Cycle Time=          4, 
+# 
+#     Average CycleTime=6.800000, Average Throughput=0.147059
+# data_bucket starts output_mem_tb.db3                  102
+# Start recieving in module output_mem_tb.db3. Simulation time =           102000000
+# Execution cycle=         15, Cycle Time=          4, 
+# 
+#     Average CycleTime=6.800000, Average Throughput=0.147059
+# data_bucket starts output_mem_tb.db2                  102
+# Start recieving in module output_mem_tb.db2. Simulation time =           102000000
+# write data =   15 @ addr =   5
+# 
+# read data =   67 @ addr =   6
+# 
+# read data =    3 @ addr =   6
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =    6 @ addr =           6 for ts2
+# 
+# output spike = 1 @ addr =           6 for ts2
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @            106000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =           106000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @            106000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =           106000000. Final result =                 6.
+# Execution cycle=         16, Cycle Time=          4, 
+# 
+#     Average CycleTime=6.625000, Average Throughput=0.150943
+# data_bucket starts output_mem_tb.db3                  106
+# Start recieving in module output_mem_tb.db3. Simulation time =           106000000
+# Execution cycle=         16, Cycle Time=          4, 
+# 
+#     Average CycleTime=6.625000, Average Throughput=0.150943
+# data_bucket starts output_mem_tb.db2                  106
+# Start recieving in module output_mem_tb.db2. Simulation time =           106000000
+# write data =    6 @ addr =   6
+# 
+# read data =   89 @ addr =   7
+# 
+# read data =   34 @ addr =   7
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =   59 @ addr =           7 for ts2
+# 
+# output spike = 1 @ addr =           7 for ts2
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @            110000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =           110000000. Final result =                 1.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @            110000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =           110000000. Final result =                 7.
+# Execution cycle=         17, Cycle Time=          4, 
+# 
+#     Average CycleTime=6.470588, Average Throughput=0.154545
+# data_bucket starts output_mem_tb.db3                  110
+# Start recieving in module output_mem_tb.db3. Simulation time =           110000000
+# Execution cycle=         17, Cycle Time=          4, 
+# 
+#     Average CycleTime=6.470588, Average Throughput=0.154545
+# data_bucket starts output_mem_tb.db2                  110
+# Start recieving in module output_mem_tb.db2. Simulation time =           110000000
+# write data =   59 @ addr =   7
+# 
+# read data =   45 @ addr =   8
+# 
+# read data =   14 @ addr =   8
+# 
+# =======================================Receive ts1 residue and ts2 conv out
+# write residue =   59 @ addr =           8 for ts2
+# 
+# output spike = 0 @ addr =           8 for ts2
+# 
+### output_mem_tb.intf[3].Receive Stalled(                   4) @            114000000
+# --------Finished recieving in module output_mem_tb.db3. Simulation time =           114000000. Final result =                 0.
+### output_mem_tb.intf[2].Receive Stalled(                   4) @            114000000
+# --------Finished recieving in module output_mem_tb.db2. Simulation time =           114000000. Final result =                 8.
+# Execution cycle=         18, Cycle Time=          4, 
+# 
+#     Average CycleTime=6.333333, Average Throughput=0.157895
+# data_bucket starts output_mem_tb.db3                  114
+# Start recieving in module output_mem_tb.db3. Simulation time =           114000000
+# Execution cycle=         18, Cycle Time=          4, 
+# 
+#     Average CycleTime=6.333333, Average Throughput=0.157895
+# data_bucket starts output_mem_tb.db2                  114
+# Start recieving in module output_mem_tb.db2. Simulation time =           114000000
+# write data =   59 @ addr =   8
+# 
+### output_mem_tb.om.done.Send Stalled(                   4) @            116000000
+### output_mem_tb.intf[6].Receive Stalled(                 118) @            118000000
+# --------Finished recieving in module output_mem_tb.db6. Simulation time =           118000000. Final result =                 1.
+### output_mem_tb.om.out_done.Receive Stalled(                  79) @            118000000
+# Execution cycle=          1, Cycle Time=        118, 
+# 
+#     Average CycleTime=118.000000, Average Throughput=0.008475
+# data_bucket starts output_mem_tb.db6                  118
+# Start recieving in module output_mem_tb.db6. Simulation time =           118000000
+### output_mem_tb.intf[5].Receive Stalled(                  42) @            120000000
+# --------Finished recieving in module output_mem_tb.db5. Simulation time =           120000000. Final result =                 1.
+### output_mem_tb.intf[4].Receive Stalled(                  42) @            120000000
+# --------Finished recieving in module output_mem_tb.db4. Simulation time =           120000000. Final result =                 1.
+### output_mem_tb.intf[1].Receive Stalled(                 120) @            120000000
+# --------Finished recieving in module output_mem_tb.db1. Simulation time =           120000000. Final result =                 1.
+# Execution cycle=          3, Cycle Time=         42, 
+# 
+#     Average CycleTime=40.000000, Average Throughput=0.025000
+# data_bucket starts output_mem_tb.db5                  120
+# Start recieving in module output_mem_tb.db5. Simulation time =           120000000
+# Execution cycle=          3, Cycle Time=         42, 
+# 
+#     Average CycleTime=40.000000, Average Throughput=0.025000
+# data_bucket starts output_mem_tb.db4                  120
+# Start recieving in module output_mem_tb.db4. Simulation time =           120000000
+# Execution cycle=          2, Cycle Time=        120, 
+# 
+#     Average CycleTime=60.000000, Average Throughput=0.016667
+# data_bucket starts output_mem_tb.db1                  120
+# Start recieving in module output_mem_tb.db1. Simulation time =           120000000
+# ** Note: $stop    : submodules_tb.sv(1085)
+#    Time: 136 ns  Iteration: 0  Instance: /output_mem_tb
+# Break in Module output_mem_tb at submodules_tb.sv line 1085
+
+
