@@ -113,15 +113,6 @@ QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 Top level modules:
 	filter_mem_node
 
-} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh_tb.sv
-QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
--- Compiling package mesh_tb_sv_unit
--- Importing package SystemVerilogCSP
--- Compiling module mesh_tb
-
-Top level modules:
-	mesh_tb
-
 } {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/output_ctrl_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/output_ctrl_tb.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 -- Compiling package output_ctrl_tb_sv_unit
@@ -131,32 +122,14 @@ QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 Top level modules:
 	output_ctrl_tb
 
-} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh_noc_snn.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh_noc_snn.sv
+} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh_tb.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
--- Compiling package mesh_noc_snn_sv_unit
+-- Compiling package mesh_tb_sv_unit
 -- Importing package SystemVerilogCSP
--- Compiling module noc_snn
+-- Compiling module mesh_tb
 
 Top level modules:
-	noc_snn
-
-} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/arbiter_2to1_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/arbiter_2to1_tb.sv
-QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
--- Compiling package arbiter_2to1_tb_sv_unit
--- Importing package SystemVerilogCSP
--- Compiling module arbiter_2to1_tb
-
-Top level modules:
-	arbiter_2to1_tb
-
-} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/dg.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/dg.sv
-QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
--- Compiling package dg_sv_unit
--- Importing package SystemVerilogCSP
--- Compiling module data_generator
-
-Top level modules:
-	data_generator
+	mesh_tb
 
 } {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/SystemVerilogCSP.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/SystemVerilogCSP.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
@@ -169,6 +142,24 @@ QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 Top level modules:
 	--none--
 
+} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/dg.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/dg.sv
+QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
+-- Compiling package dg_sv_unit
+-- Importing package SystemVerilogCSP
+-- Compiling module data_generator
+
+Top level modules:
+	data_generator
+
+} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/arbiter_2to1_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/arbiter_2to1_tb.sv
+QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
+-- Compiling package arbiter_2to1_tb_sv_unit
+-- Importing package SystemVerilogCSP
+-- Compiling module arbiter_2to1_tb
+
+Top level modules:
+	arbiter_2to1_tb
+
 } {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/input_ctrl.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/input_ctrl.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 -- Compiling package input_ctrl_sv_unit
@@ -177,15 +168,6 @@ QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 
 Top level modules:
 	input_ctrl
-
-} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh.sv
-QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
--- Compiling package mesh_sv_unit
--- Importing package SystemVerilogCSP
--- Compiling module mesh
-
-Top level modules:
-	mesh
 
 } {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/output_ctrl.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/output_ctrl.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
@@ -196,14 +178,23 @@ QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 Top level modules:
 	output_ctrl
 
-} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/db.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/db.sv
+} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/mesh.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
--- Compiling package db_sv_unit
+-- Compiling package mesh_sv_unit
 -- Importing package SystemVerilogCSP
--- Compiling module data_bucket
+-- Compiling module mesh
 
 Top level modules:
-	data_bucket
+	mesh
+
+} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/noc_snn.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/noc_snn.sv
+QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
+-- Compiling package noc_snn_sv_unit
+-- Importing package SystemVerilogCSP
+-- Compiling module noc_snn
+
+Top level modules:
+	noc_snn
 
 } {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/router_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/router_tb.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
@@ -213,6 +204,15 @@ QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 
 Top level modules:
 	router_tb
+
+} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/db.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/db.sv
+QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
+-- Compiling package db_sv_unit
+-- Importing package SystemVerilogCSP
+-- Compiling module data_bucket
+
+Top level modules:
+	data_bucket
 
 } {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/output_mem.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/output_mem.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
@@ -251,6 +251,15 @@ Top level modules:
 	output_mem_array_tb
 	output_mem_tb
 
+} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/router.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/router.sv
+QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
+-- Compiling package router_sv_unit
+-- Importing package SystemVerilogCSP
+-- Compiling module router
+
+Top level modules:
+	router
+
 } {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/shim.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/shim.sv
 QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 -- Compiling package shim_sv_unit
@@ -262,14 +271,5 @@ QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
 
 Top level modules:
 	shim_tb
-
-} {} {}} C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/router.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/dpl19/OneDrive/Notes/GitHub/EE552_NOC/router.sv
-QuestaSim-64 vlog 10.4c Compiler 2015.07 Jul 20 2015
--- Compiling package router_sv_unit
--- Importing package SystemVerilogCSP
--- Compiling module router
-
-Top level modules:
-	router
 
 } {} {}}
