@@ -1,3 +1,4 @@
+
 /*
 TO DO:
 1. test the module
@@ -29,7 +30,7 @@ module output_mem_depacketizer(interface packet_in, output_done, conv_mem_in_ts1
     parameter FL = 1;
     parameter BL = 1;
 
-    logic [packet_width-1:0] packet_data;
+    logic [packet_width-1:0] packet_data, packet_data2;
     logic [psum_addr_width-1:0] addr_psum;
     logic [psum_width-1:0] conv_out;
     logic [addr_width-1:0] source, dest;
@@ -47,15 +48,15 @@ module output_mem_depacketizer(interface packet_in, output_done, conv_mem_in_ts1
     logic out_done = 0;
 
     always begin
-    	packet_in.Receive(packet_data);
+        packet_in.Receive(packet_data);
 
         source = packet_data[55:52];
         dest = packet_data[51:48];
         addr_psum = packet_data[39:13];
         conv_out = packet_data[12:0];
 
-        $display("Receive packet in output mem depack:\nsource = %d\ndest = %d\npsum addr = %d\npsum = %d\n", 
-        source, dest, addr_psum, conv_out);
+        //$display("Receive packet in output mem depack:\nsource = %d\ndest = %d\npsum addr = %d\npsum = %d\n", 
+        //source, dest, addr_psum, conv_out);
 
         #FL;
 
@@ -90,7 +91,7 @@ module output_mem_depacketizer(interface packet_in, output_done, conv_mem_in_ts1
 
         #BL;
 
-        $display("ts1_ready = %b\nts2_ready = %b\n", ts1_ready, ts2_ready);
+        //$display("ts1_ready = %b\nts2_ready = %b\n", ts1_ready, ts2_ready);
 
         if(ts1_ready && ts2_ready) begin
             start.Send(0);
@@ -143,7 +144,7 @@ module output_mem_array(interface conv_mem_in1, conv_mem_addr1, conv_mem_in2, co
 
         conv_mem_array[in_addr] = conv_data;
 
-        $display("write data = %d @ addr = %d\n", conv_data, in_addr);
+        //$display("write data = %d @ addr = %d\n", conv_data, in_addr);
 
         #BL;
     end
@@ -159,7 +160,7 @@ module output_mem_array(interface conv_mem_in1, conv_mem_addr1, conv_mem_in2, co
 
         conv_mem_array[in_addr] = conv_data;
 
-        $display("write data = %d @ addr = %d\n", conv_data, in_addr);
+        //$display("write data = %d @ addr = %d\n", conv_data, in_addr);
 
         #BL;
     end
@@ -172,7 +173,7 @@ module output_mem_array(interface conv_mem_in1, conv_mem_addr1, conv_mem_in2, co
 
         conv_mem_out.Send(conv_mem_array[out_addr]);
 
-        $display("read data = %d @ addr = %d\n", conv_mem_array[out_addr], out_addr);
+        //$display("read data = %d @ addr = %d\n", conv_mem_array[out_addr], out_addr);
 
         #BL;
     end
@@ -243,7 +244,7 @@ module output_mem_out(interface conv_mem_out_ts1, conv_mem_out_ts2, done, conv_m
             #FL;
 
             //conv out >= 64
-            if(conv_data1 >= THRESHOLD) begin
+            if(conv_data1 > THRESHOLD) begin
                 out_spike_ts1 = 1;
                 out_residue1 = conv_data1 - THRESHOLD;
             end
@@ -258,13 +259,13 @@ module output_mem_out(interface conv_mem_out_ts1, conv_mem_out_ts2, done, conv_m
                 conv_mem_in_ts1.Send(out_residue1);
                 conv_mem_addr_ts1.Send(i);
 
-                $display("write residue = %d @ addr = %d for ts1\n", out_residue1, i);
+                //$display("write residue = %d @ addr = %d for ts1\n", out_residue1, i);
 
                 //send output spike ts1
                 out_spike_data.Send(out_spike_ts1);
                 out_spike_addr.Send(i);
 
-                $display("output spike = %d @ addr = %d for ts1\n", out_spike_ts1, i);
+                //$display("output spike = %d @ addr = %d for ts1\n", out_spike_ts1, i);
             join
 
             #BL;
@@ -272,7 +273,7 @@ module output_mem_out(interface conv_mem_out_ts1, conv_mem_out_ts2, done, conv_m
 
         ts_r.Send(2);
         layer_r.Send(1);
-        $display("+++++++++++++++++++++++++++++++SEND 2 TO TS_R, SEND 1 TO LAYER_R");
+        //$display("+++++++++++++++++++++++++++++++SEND 2 TO TS_R, SEND 1 TO LAYER_R");
 
         #BL;
 
@@ -282,14 +283,14 @@ module output_mem_out(interface conv_mem_out_ts1, conv_mem_out_ts2, done, conv_m
                 conv_mem_out_ts2.Receive(conv_data2);
             join
 
-            $display("=======================================Receive ts1 residue and ts2 conv out");
+            //$display("=======================================Receive ts1 residue and ts2 conv out");
 
             #FL;
 
             conv_data2 = conv_data1 + conv_data2;
 
             //conv out >= 64
-            if(conv_data2 >= THRESHOLD) begin
+            if(conv_data2 > THRESHOLD) begin
                 out_spike_ts2 = 1;
                 out_residue2 = conv_data2 - THRESHOLD;
             end
@@ -304,13 +305,13 @@ module output_mem_out(interface conv_mem_out_ts1, conv_mem_out_ts2, done, conv_m
                 conv_mem_in_ts2.Send(out_residue2);
                 conv_mem_addr_ts2.Send(j);
 
-                $display("write residue = %d @ addr = %d for ts2\n", out_residue2, j);
+                //$display("write residue = %d @ addr = %d for ts2\n", out_residue2, j);
 
                 //send output spike ts2
                 out_spike_data.Send(out_spike_ts2);
                 out_spike_addr.Send(j);
 
-                $display("output spike = %d @ addr = %d for ts2\n", out_spike_ts2, j);
+                //$display("output spike = %d @ addr = %d for ts2\n", out_spike_ts2, j);
             join
 
             #BL;
@@ -380,4 +381,23 @@ module output_mem(interface packet_in, start_r, out_spike_addr, out_spike_data, 
         .start_r(start_r), .out_spike_addr(out_spike_addr), .out_spike_data(out_spike_data), .ts_r(ts_r), .layer_r(layer_r), .done_r(done_r), .output_done(out_done));
 
 endmodule
+
+
+module output_mem_top(interface packet_in1, packet_in2, start_r, out_spike_addr, out_spike_data, ts_r, layer_r, done_r);
+
+    parameter packet_width = 57;
+
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) out ();
+    arbiter_2to1 ab(
+        packet_in1,packet_in2,out
+        );
+
+    output_mem mem(
+        out, start_r, out_spike_addr, out_spike_data, ts_r, layer_r, done_r
+        );
+
+
+endmodule
+
+
 

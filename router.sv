@@ -9,6 +9,7 @@ module router(
     west_in, west_out,
     PE_in, PE_out
     );
+
     parameter FL = 2, BL = 1;
     
     parameter WIDTH_data = 8;

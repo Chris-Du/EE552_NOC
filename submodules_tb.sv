@@ -1,4 +1,4 @@
-`timescale 1ns/100ps
+`timescale 1ns/1ns
 
 import SystemVerilogCSP::*;
 
@@ -117,15 +117,16 @@ module complete_pe_tb;
     logic [addr_width-1:0] source, dest;
     logic [iff_type_width-1:0] iff_type = 0;
 
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) intf [1:0] ();
-    pe pe_i(.packet_in(intf[0]), .packet_out(intf[1]));
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) intf [2:0] ();
+    pe pe_i(.packet_in(intf[0]), .packet_out(intf[1]), .to_partial_sum(intf[2]));
     data_bucket db (intf[1]);
+    data_bucket db1 (intf[2]);
 
     initial begin
 
         /*
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
         dest = 4'd2;
         x_dir = 1'b1;
@@ -151,7 +152,7 @@ module complete_pe_tb;
 
 
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
         dest = 4'd2;
         x_dir = 1'b1;
@@ -177,7 +178,7 @@ module complete_pe_tb;
 
 
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
         dest = 4'd2;
         x_dir = 1'b1;
@@ -205,7 +206,7 @@ module complete_pe_tb;
 
         /*
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
         dest = 4'd1;
         x_dir = 1'b1;
@@ -231,7 +232,7 @@ module complete_pe_tb;
 
 
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
         dest = 4'd1;
         x_dir = 1'b1;
@@ -257,7 +258,7 @@ module complete_pe_tb;
 
 
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
         dest = 4'd1;
         x_dir = 1'b1;
@@ -285,9 +286,9 @@ module complete_pe_tb;
 
         
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
-        dest = 4'd6;
+        dest = 4'd5;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
@@ -299,7 +300,7 @@ module complete_pe_tb;
         #10;
         iff_type = 2'h1;
         source = 4'd12;
-        dest = 4'd6;
+        dest = 4'd5;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
@@ -311,9 +312,9 @@ module complete_pe_tb;
 
 
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
-        dest = 4'd6;
+        dest = 4'd5;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
@@ -325,7 +326,7 @@ module complete_pe_tb;
         #10;
         iff_type = 2'h1;
         source = 4'd12;
-        dest = 4'd6;
+        dest = 4'd5;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
@@ -337,9 +338,9 @@ module complete_pe_tb;
 
 
         #10;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd11;
-        dest = 4'd6;
+        dest = 4'd5;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
@@ -351,7 +352,7 @@ module complete_pe_tb;
         #10;
         iff_type = 2'h1;
         source = 4'd12;
-        dest = 4'd6;
+        dest = 4'd5;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
@@ -391,16 +392,16 @@ module partial_sum_tb;
     logic [addr_width-1:0] source, dest;
     logic [iff_type_width-1:0] iff_type = 0;
 
-    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) intf [1:0] ();
-    partial_sum psum(.packet_in(intf[0]), .packet_out(intf[1]));
-    data_bucket db (intf[1]);
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(packet_width)) intf [5:0] ();
+    partial_sum psum(.from_pe1(intf[0]), .from_pe2(intf[1]), .from_pe3(intf[2]), .from_pe4(intf[3]), .from_pe5(intf[4]), .packet_out(intf[5]));
+    data_bucket db (intf[5]);
 
     initial begin
         //send 5 psum packets to partial sum adder
         
         //PE1
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h1;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -408,13 +409,13 @@ module partial_sum_tb;
         y_dir = 1'b1;
         y_hop = 3'b111;    
         psum_addr = 27'h0;
-        conv_output = 13'h5;
+        conv_output = 13'd5;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
         intf[0].Send(packet_data);
         
         //PE2
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h2;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -422,13 +423,13 @@ module partial_sum_tb;
         y_dir = 1'b1;
         y_hop = 3'b111;    
         psum_addr = 27'h0;
-        conv_output = 13'hA;
+        conv_output = 13'd10;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
-        intf[0].Send(packet_data);
+        intf[1].Send(packet_data);
         
         //PE3
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h3;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -436,13 +437,13 @@ module partial_sum_tb;
         y_dir = 1'b1;
         y_hop = 3'b111;    
         psum_addr = 27'h0;
-        conv_output = 13'hF;
+        conv_output = 13'd15;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
-        intf[0].Send(packet_data);
+        intf[2].Send(packet_data);
 
         //PE4
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h4;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -450,13 +451,13 @@ module partial_sum_tb;
         y_dir = 1'b1;
         y_hop = 3'b111;    
         psum_addr = 27'h0;
-        conv_output = 13'h14;
+        conv_output = 13'd20;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
-        intf[0].Send(packet_data);
+        intf[3].Send(packet_data);
 
         //PE5
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h5;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -464,83 +465,83 @@ module partial_sum_tb;
         y_dir = 1'b1;
         y_hop = 3'b111;    
         psum_addr = 27'h0;
-        conv_output = 13'h19;
+        conv_output = 13'd25;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
-        intf[0].Send(packet_data);
+        intf[4].Send(packet_data);
         
-        #50;
+        #10;
 
         //send 5 psum packets to partial sum adder
         
         //PE1
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h1;
-        dest = 4'hE;
+        dest = 4'hD;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
         y_hop = 3'b111;    
-        psum_addr = 27'hF;
-        conv_output = 13'h8;
+        psum_addr = 27'h1;
+        conv_output = 13'd8;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
         intf[0].Send(packet_data);
         
         //PE2
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h2;
-        dest = 4'hE;
+        dest = 4'hD;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
         y_hop = 3'b111;    
-        psum_addr = 27'hF;
-        conv_output = 13'h12;
+        psum_addr = 27'h1;
+        conv_output = 13'd18;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
-        intf[0].Send(packet_data);
+        intf[1].Send(packet_data);
         
         //PE3
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h3;
-        dest = 4'hE;
+        dest = 4'hD;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
         y_hop = 3'b111;    
-        psum_addr = 27'hF;
-        conv_output = 13'h1C;
+        psum_addr = 27'h1;
+        conv_output = 13'd28;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
-        intf[0].Send(packet_data);
+        intf[2].Send(packet_data);
 
         //PE4
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h4;
-        dest = 4'hE;
+        dest = 4'hD;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
         y_hop = 3'b111;    
-        psum_addr = 27'hF;
-        conv_output = 13'h26;
+        psum_addr = 27'h1;
+        conv_output = 13'd38;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
-        intf[0].Send(packet_data);
+        intf[3].Send(packet_data);
 
         //PE5
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'h5;
-        dest = 4'hE;
+        dest = 4'hD;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
         y_hop = 3'b111;    
-        psum_addr = 27'hF;
-        conv_output = 13'h30;
+        psum_addr = 27'h1;
+        conv_output = 13'd48;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, conv_output};
-        intf[0].Send(packet_data);
+        intf[4].Send(packet_data);
 
         #50;
         $stop;
@@ -579,7 +580,7 @@ module output_mem_depacketizer_tb;
 
     initial begin
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'hD;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -592,7 +593,7 @@ module output_mem_depacketizer_tb;
         intf[0].Send(packet_data);
 
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'hD;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -605,7 +606,7 @@ module output_mem_depacketizer_tb;
         intf[0].Send(packet_data);
 
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'hD;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -618,7 +619,7 @@ module output_mem_depacketizer_tb;
         intf[0].Send(packet_data);
 
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'hD;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -631,7 +632,7 @@ module output_mem_depacketizer_tb;
         intf[0].Send(packet_data);
 
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'hD;
         dest = 4'hD;
         x_dir = 1'b1;
@@ -718,7 +719,7 @@ module output_mem_tb;
         /*
         //ts1[0] = 74
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -732,7 +733,7 @@ module output_mem_tb;
 
         //ts2[0] = 20
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -746,7 +747,7 @@ module output_mem_tb;
 
         //ts1[1] = 33
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -760,7 +761,7 @@ module output_mem_tb;
 
         //ts2[1] = 31
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -774,7 +775,7 @@ module output_mem_tb;
 
         //ts1[2] = 105
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -788,7 +789,7 @@ module output_mem_tb;
 
         //ts2[2] = 20
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -802,7 +803,7 @@ module output_mem_tb;
 
         //ts1[3] = 68
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -816,7 +817,7 @@ module output_mem_tb;
 
         //ts2[3] = 60
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -831,7 +832,7 @@ module output_mem_tb;
 
         //ts1[0] = 12
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -845,7 +846,7 @@ module output_mem_tb;
 
         //ts2[0] = 90
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -859,7 +860,7 @@ module output_mem_tb;
 
         //ts1[1] = 56
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -873,7 +874,7 @@ module output_mem_tb;
 
         //ts2[1] = 23
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -887,7 +888,7 @@ module output_mem_tb;
 
         //ts1[2] = 98
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -901,7 +902,7 @@ module output_mem_tb;
 
         //ts2[2] = 56
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -915,7 +916,7 @@ module output_mem_tb;
 
         //ts1[3] = 23
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -929,7 +930,7 @@ module output_mem_tb;
 
         //ts2[3] = 78
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -943,7 +944,7 @@ module output_mem_tb;
 
         //ts1[4] = 89
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -957,7 +958,7 @@ module output_mem_tb;
 
         //ts2[4] = 12
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -971,7 +972,7 @@ module output_mem_tb;
 
         //ts1[5] = 45
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -985,7 +986,7 @@ module output_mem_tb;
 
         //ts2[5] = 34
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -999,7 +1000,7 @@ module output_mem_tb;
 
         //ts1[6] = 67
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -1013,7 +1014,7 @@ module output_mem_tb;
 
         //ts2[6] = 67
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -1027,7 +1028,7 @@ module output_mem_tb;
 
         //ts1[7] = 34
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -1041,7 +1042,7 @@ module output_mem_tb;
 
         //ts2[7] = 89
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -1055,7 +1056,7 @@ module output_mem_tb;
 
         //ts1[8] = 78
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd13;
         dest = 4'd15;
         x_dir = 1'b1;
@@ -1069,7 +1070,7 @@ module output_mem_tb;
 
         //ts2[8] = 45
         #2;
-        iff_type = 2'h0;
+        iff_type = 1'h0;
         source = 4'd14;
         dest = 4'd15;
         x_dir = 1'b1;

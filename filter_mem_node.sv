@@ -43,16 +43,16 @@ module filter_mem_node (
                 for(integer j = 0; j < WIDTH_data; j++) begin
                     mem_filter [i/DEPTH_F] [f_addr%DEPTH_F*8+j] = f_data[j];
                     test_data[j] = f_data[j];
-                    $display("%d",test_data);
+                    //$display("%d",test_data);
                 end
-                $display("Filter receives %d at %d", f_data, f_addr);
+                //$display("Filter receives %d at %d", f_data, f_addr);
 
             end
         end
 
         load_done.Receive(load_dn);
         if(load_dn==1) begin
-            $display("Successfully load all filter!");
+            //$display("Successfully load all filter!");
         end
         source = NODE-1;
         for(integer i = 0; i < DEPTH_F; i = i + 1) begin

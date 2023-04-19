@@ -23,6 +23,9 @@ module noc_snn (
     // router in out channel
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) in[14:0]();
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) out[14:0]();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) pe_to_partial_sum[9:0]();
+    Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) partial_sum_to_mem[1:0]();
+
 
     // node12 ifmem node channel
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(1)) ifmem_load_start();
@@ -31,6 +34,7 @@ module noc_snn (
     // node 11 filter mem channel
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(1)) filter_load_start(); 
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(1)) filter_load_done(); 
+
 
     // in == PE_in, input from PE to router
     // out == PE_out, output from router to PE
@@ -71,6 +75,24 @@ module noc_snn (
         in[10] // PE_in of node12 goes to in[10]
     );
 
+
+    pe p_e1(out[0], in[0], pe_to_partial_sum[0]);
+    pe p_e2(out[1], in[1], pe_to_partial_sum[1]);
+    pe p_e3(out[2], in[2], pe_to_partial_sum[2]);
+    pe p_e4(out[3], in[3], pe_to_partial_sum[3]);
+    pe p_e5(out[4], in[4], pe_to_partial_sum[4]);
+    pe p_e6(out[5], in[5], pe_to_partial_sum[5]);
+    pe p_e7(out[6], in[6], pe_to_partial_sum[6]);
+    pe p_e8(out[7], in[7], pe_to_partial_sum[7]);
+    pe p_e9(out[8], in[8], pe_to_partial_sum[8]);
+    pe p_e10(out[9],in[9], pe_to_partial_sum[9]);
+
+    partial_sum ps1(pe_to_partial_sum[0], pe_to_partial_sum[1], pe_to_partial_sum[2], pe_to_partial_sum[3], pe_to_partial_sum[4], partial_sum_to_mem[0]);
+    partial_sum ps2(pe_to_partial_sum[5], pe_to_partial_sum[6], pe_to_partial_sum[7], pe_to_partial_sum[8], pe_to_partial_sum[9], partial_sum_to_mem[1]);
+
+    output_mem_top om(.packet_in1(partial_sum_to_mem[0]),.packet_in2(partial_sum_to_mem[1]), .start_r(start_r), .out_spike_addr(out_spike_addr), .out_spike_data(out_spike_data), .ts_r(ts_r), .layer_r(layer_r), .done_r(done_r));
+
+
     // copy load_start and load_done to two input mem nodes
     always begin
         load_start.Receive(ls);
@@ -86,4 +108,6 @@ module noc_snn (
             filter_load_done.Send(ld);
         join
     end
+
+
 endmodule

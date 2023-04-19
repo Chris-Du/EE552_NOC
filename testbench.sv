@@ -131,7 +131,7 @@ initial begin
    	   for(integer i=0; i<(DEPTH_R*DEPTH_R); i++) begin
 	    if(!$feof(fpi_out1)) begin
 	     status = $fscanf(fpi_out1,"%d\n", out_data);
-	     $display("GodenResult data read (output_spike 1):%d", out_data);
+	     $display("GoldenResult data read (output_spike 1):%d", out_data);
 	     comp1[i] = out_data;
 	     $fdisplay(fpt,"comp1[%d]= %d",i,out_data); 
 	   end end
@@ -206,7 +206,7 @@ end
 	  $fdisplay(fpo,"%m Results compared, ending simulation at %t",$realtime);
 	  $fclose(fpt);
 	  $fclose(fpo);
-	  $finish;
+	  $stop;
 	end
 
 end

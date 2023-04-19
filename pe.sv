@@ -46,6 +46,8 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
     logic f_forward = 0;
     logic if_forward = 0;
 
+    integer fp;
+
     always begin
         packet_in.Receive(packet_data);
 
@@ -72,8 +74,15 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
             data = packet_data[39:0];
         end
 
+        /*
         $display("Receive packet in PE depack:\niff_type = %b\nsource = %d\ndest = %d\nx_dir = %b\nx_hop = %d\ny_dir = %b\ny_hop = %d\ndata = %d\n", 
             iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, data);
+        */
+
+        //add a display here to see when this module starts its main loop
+        fp = $fopen("pe.out");
+        $fdisplay(fp,"PE%d out data: %h",dest,packet_data);
+        //Communication action Receive is finished 
 
         //filter packet arrive, then PE1-5 forward filter data to PE6-10
         if((iff_type == 0) && (dest == 1 || dest == 2 || dest == 3 || dest == 4 || dest == 5)) begin
@@ -180,7 +189,7 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                 ifmap_in.Send(ifmap_data);                
                 ifmap_addr.Send(addr_ifmap);
 
-                $display("ifmap_data = %d\nifmap_addr = %d\n", ifmap_data, addr_ifmap);
+                //$display("ifmap_data = %d\nifmap_addr = %d\n", ifmap_data, addr_ifmap);
                 addr_ifmap++;
                 #BL;
             end
@@ -194,7 +203,7 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
                 filter_in.Send(filter_data);
                 filter_addr.Send(addr_filter);
 
-                $display("filter_data = %d\nfilter_addr = %d\n", filter_data, addr_filter);
+                //$display("filter_data = %d\nfilter_addr = %d\n", filter_data, addr_filter);
                 addr_filter++;
                 #BL;
             end
@@ -202,7 +211,7 @@ module pe_depacketizer(interface packet_in, ifmap_in, ifmap_addr, filter_in, fil
             filter_ready = 1;
         end
 
-        $display("ifmap ready= %b, filter ready= %b", ifmap_ready, filter_ready);
+        //$display("ifmap ready= %b, filter ready= %b", ifmap_ready, filter_ready);
 
         //if ifmap and filter ready, start computing in PE
         if(filter_ready && ifmap_ready) begin
@@ -367,7 +376,7 @@ endmodule
 
 
 module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, done, psum_out, 
-    iff_typeIntf, sourceIntf, destIntf, x_dirIntf, y_dirIntf, x_hopIntf, y_hopIntf, packet_out);
+    iff_typeIntf, sourceIntf, destIntf, x_dirIntf, y_dirIntf, x_hopIntf, y_hopIntf, packet_out, to_partial_sum);
     parameter WIDTH = 8;
     parameter DEPTH_I = 25;
     parameter ADDR_I = 5; 
@@ -399,6 +408,8 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
     logic if_forward;
     logic don_e;
 
+    integer fp;
+
     int no_iterations = DEPTH_I - DEPTH_F + 1;
 
     always begin
@@ -421,13 +432,13 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
 
             #FL;
 
-            $display("Sending forwarding data\niff type = %b\ndata = %b\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
-            iff_type, data, source, dest, x_dir, y_dir, x_hop, y_hop);
+            //$display("Sending forwarding data\niff type = %b\ndata = %b\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
+            //iff_type, data, source, dest, x_dir, y_dir, x_hop, y_hop);
 
             packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, data};
 
             packet_out.Send(packet_data);
-            $display("packet = %b\n", packet_data);
+            //$display("packet = %b\n", packet_data);
             #BL;
         end
         //filter_forward = 0, need to send psum to PSUM module
@@ -447,14 +458,18 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
 
                 #FL;            
                 
-                $display("Sending psum\niff type = %b\npsum_out = %d\npsum_addr = %d\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
-                
-                iff_type, psum, psum_addr, source, dest, x_dir, y_dir, x_hop, y_hop);
+                //$display("Sending psum\niff type = %b\npsum_out = %d\npsum_addr = %d\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
+                //iff_type, psum, psum_addr, source, dest, x_dir, y_dir, x_hop, y_hop);
 
                 packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, psum_addr, psum};
 
-                packet_out.Send(packet_data);
-                $display("packet = %b\n", packet_data);
+                to_partial_sum.Send(packet_data);
+                //$display("packet = %b\n", packet_data);
+
+                //add a display here to see when this module starts its main loop
+                fp = $fopen("pe_send_out.out");
+                $fdisplay(fp,"PE%d psum addr = %d psum data = %d",source,psum_addr,psum);
+                //Communication action Receive is finished 
 
                 if(psum_addr < DEPTH_C-1) psum_addr++;
                 //counter >= 440
@@ -488,13 +503,13 @@ module pe_packetizer(interface f_forwardIntf, if_forwardIntf, data_forwardIntf, 
 
                 #FL;
 
-                $display("Sending forwarding data\niff type = %b\ndata = %b\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
-                iff_type, data, source, dest, x_dir, y_dir, x_hop, y_hop);
+                //$display("Sending forwarding data\niff type = %b\ndata = %b\nsource = %d\ndest = %d\nx_dir = %b\ny_dir = %b\nx_hop = %d\ny_hop = %d\n",
+                //iff_type, data, source, dest, x_dir, y_dir, x_hop, y_hop);
 
                 packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, data};
 
                 packet_out.Send(packet_data);
-                $display("packet = %b\n", packet_data);
+                //$display("packet = %b\n", packet_data);
                 #BL;
 
             end
@@ -814,7 +829,7 @@ module control(interface start, ifmap_out_addr, filter_out_addr, acc_clear, add_
 endmodule
 
 
-module pe(interface packet_in, packet_out);
+module pe(interface packet_in, packet_out, to_partial_sum);
     parameter WIDTH = 8;
     parameter DEPTH_I = 25;
     parameter ADDR_I = 5; 
@@ -864,7 +879,8 @@ module pe(interface packet_in, packet_out);
     
     pe_packetizer #(.WIDTH(WIDTH))
     pep (.f_forwardIntf(f_forwardIntf), .if_forwardIntf(if_forwardIntf), .data_forwardIntf(data_forwardIntf), .done(done), .psum_out(psum_out), 
-    .iff_typeIntf(iff_typeIntf), .sourceIntf(sourceIntf), .destIntf(destIntf), .x_dirIntf(x_dirIntf), .y_dirIntf(y_dirIntf), .x_hopIntf(x_hopIntf), .y_hopIntf(y_hopIntf), .packet_out(packet_out));
+    .iff_typeIntf(iff_typeIntf), .sourceIntf(sourceIntf), .destIntf(destIntf), .x_dirIntf(x_dirIntf), .y_dirIntf(y_dirIntf), .x_hopIntf(x_hopIntf), .y_hopIntf(y_hopIntf), .packet_out(packet_out),
+    .to_partial_sum(to_partial_sum));
     
     control #(.WIDTH(WIDTH), .FL(FL), .BL(BL))
     ctrl (.start(start), .ifmap_out_addr(ifmap_out_addr), .filter_out_addr(filter_out_addr), .acc_clear(acc_clear), .add_sel(add_sel), .split_sel(split_sel), .done(done));

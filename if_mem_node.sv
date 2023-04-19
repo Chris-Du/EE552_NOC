@@ -65,13 +65,14 @@ module if_mem_node (
 
         load_done.Receive(load_dn);
         if(load_dn==1) begin
-            $display("Successfully load all ifmaps and filter!");
+            //$display("Successfully load all ifmaps and filter!");
         end
-        $display("Start send op to each nodes.");
+        //$display("Start send op to each nodes.");
         source = NODE-1;
         for(integer i = 0; i < DEPTH_I; i = i + 1) begin
             for(integer loop_ts = 0; loop_ts < 2; loop_ts= loop_ts + 1) begin
                 packet = 0;
+                packet[56] = 1'b1;
                 if(i < 5) begin
                     dest = i;
                 end

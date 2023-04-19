@@ -7,7 +7,7 @@
 //-------------------------------------------------------------------------------------------------
 `timescale 1ns/1fs
 // uncomment the following line to enable stall calculation and display
-`define displayStalls 1
+//`define displayStalls 1
 //uncomment the following line for automatic deadlock detection
 `define detectDeadlock 1
 `define defaultWatchDogTime 100ns
@@ -23,7 +23,7 @@ import SystemVerilogCSP::*;
 //-------------------------------------------------------------------------------------------------
 interface Channel;
   parameter SHARED = 0;
-  parameter WIDTH = 57;
+  parameter WIDTH = 8;
   parameter ChannelProtocol hsProtocol = P2PhaseBD;
   parameter NUMBER_OF_RECEIVERS = 1;
 `ifdef detectDeadlock
@@ -141,7 +141,7 @@ lastSendEvent = $time;
 		hsSenderPhase = ~hsSenderPhase;
 	end
 `ifdef displayStalls
-stall = $time - start;
+stall = $time - start; // start =$time at beggining of task execution 
 if(stall != 0) $display("### %m Stalled(%d) @ %t",stall,$time);
 `endif
 endtask

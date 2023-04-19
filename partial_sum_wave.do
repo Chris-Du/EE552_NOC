@@ -18,6 +18,26 @@ add wave -noupdate {/partial_sum_tb/intf[1]/req}
 add wave -noupdate {/partial_sum_tb/intf[1]/ack}
 add wave -noupdate {/partial_sum_tb/intf[1]/data}
 
+add wave -noupdate {/partial_sum_tb/intf[2]/status}
+add wave -noupdate {/partial_sum_tb/intf[2]/req}
+add wave -noupdate {/partial_sum_tb/intf[2]/ack}
+add wave -noupdate {/partial_sum_tb/intf[2]/data}
+
+add wave -noupdate {/partial_sum_tb/intf[3]/status}
+add wave -noupdate {/partial_sum_tb/intf[3]/req}
+add wave -noupdate {/partial_sum_tb/intf[3]/ack}
+add wave -noupdate {/partial_sum_tb/intf[3]/data}
+
+add wave -noupdate {/partial_sum_tb/intf[4]/status}
+add wave -noupdate {/partial_sum_tb/intf[4]/req}
+add wave -noupdate {/partial_sum_tb/intf[4]/ack}
+add wave -noupdate {/partial_sum_tb/intf[4]/data}
+
+add wave -noupdate {/partial_sum_tb/intf[5]/status}
+add wave -noupdate {/partial_sum_tb/intf[5]/req}
+add wave -noupdate {/partial_sum_tb/intf[5]/ack}
+add wave -noupdate {/partial_sum_tb/intf[5]/data}
+
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 fs} 0}
 configure wave -namecolwidth 246
