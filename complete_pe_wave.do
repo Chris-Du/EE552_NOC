@@ -18,6 +18,11 @@ add wave -noupdate {/complete_pe_tb/intf[1]/req}
 add wave -noupdate {/complete_pe_tb/intf[1]/ack}
 add wave -noupdate {/complete_pe_tb/intf[1]/data}
 
+add wave -noupdate {/complete_pe_tb/intf[2]/status}
+add wave -noupdate {/complete_pe_tb/intf[2]/req}
+add wave -noupdate {/complete_pe_tb/intf[2]/ack}
+add wave -noupdate {/complete_pe_tb/intf[2]/data}
+
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 fs} 0}
 configure wave -namecolwidth 246

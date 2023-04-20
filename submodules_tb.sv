@@ -284,7 +284,7 @@ module complete_pe_tb;
         #1500;
         */
 
-        
+        /*
         #10;
         iff_type = 1'h0;
         source = 4'd11;
@@ -335,12 +335,12 @@ module complete_pe_tb;
         packet_data = {iff_type, source, dest, x_dir, x_hop, y_dir, y_hop, data};
         intf[0].Send(packet_data);
 
-
+        */
 
         #10;
         iff_type = 1'h0;
         source = 4'd11;
-        dest = 4'd5;
+        dest = 4'd2;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
@@ -352,7 +352,7 @@ module complete_pe_tb;
         #10;
         iff_type = 2'h1;
         source = 4'd12;
-        dest = 4'd5;
+        dest = 4'd2;
         x_dir = 1'b1;
         x_hop = 3'b111;
         y_dir = 1'b1;
