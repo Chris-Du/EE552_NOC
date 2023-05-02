@@ -1,6 +1,5 @@
 `timescale 1ns/1ps
 
-import SystemVerilogCSP::*;
 parameter WIDTH_packet = 57;
 module arbiter_2to1_gate (
     input logic in1_req,
@@ -15,6 +14,7 @@ module arbiter_2to1_gate (
 );
     
     parameter FL = 2, BL = 1;
+    parameter WIDTH_packet = 57;
     logic [WIDTH_packet-1:0] in_packet;
     logic prio;
     initial begin
@@ -22,6 +22,9 @@ module arbiter_2to1_gate (
     end
 
     always begin
+        in1_ack = 0;
+        in2_ack = 0;
+        wait(in1_req || in2_req);
         if(in1_req && in2_req) begin
             // contention
             if(prio) begin
@@ -30,7 +33,6 @@ module arbiter_2to1_gate (
                 in_packet = in2_data;
                 in2_ack = 1;
                 wait(in2_req == 0);
-                in2_ack = 0;
                 #FL;
                 out_data = in_packet;
                 out_req = 1;
@@ -45,7 +47,6 @@ module arbiter_2to1_gate (
                 in_packet = in1_data;
                 in1_ack = 1;
                 wait(in1_req == 0);
-                in1_ack = 0;
                 #FL;
                 out_data = in_packet;
                 out_req = 1;
@@ -60,7 +61,6 @@ module arbiter_2to1_gate (
             in_packet = in1_data;
             in1_ack = 1;
             wait(in1_req == 0);
-            in1_ack = 0;
             #FL;
             out_data = in_packet;
             out_req = 1;
@@ -73,7 +73,6 @@ module arbiter_2to1_gate (
             in_packet = in2_data;
             in2_ack = 1;
             wait(in2_req == 0);
-            in2_ack = 0;
             #FL;
             out_data = in_packet;
             out_req = 1;

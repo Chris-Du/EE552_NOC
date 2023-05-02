@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ns/1ns
 
 import SystemVerilogCSP::*;
 
@@ -9,7 +9,7 @@ module output_ctrl_tb;
     Channel #(.hsProtocol(P4PhaseBD), .WIDTH(WIDTH_packet)) out();
     logic [WIDTH_packet-1:0] out_data;
     integer single,double,triple,quad,count;
-    output_ctrl dut(
+    output_ctrl_gate dut(
         in[0],
         in[1],
         in[2],
