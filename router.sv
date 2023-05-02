@@ -101,7 +101,7 @@ module router(
         .PE_out(empty[4])
     );
 
-    output_ctrl north_output(
+    output_ctrl_gate north_output(
         .in1(south_to_north),
         .in2(east_to_north),
         .in3(west_to_north),
